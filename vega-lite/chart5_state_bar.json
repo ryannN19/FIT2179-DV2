@@ -1,0 +1,110 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Domestic Tourist Arrivals by State, 2024",
+    "subtitle": "Number of domestic visitors in thousands ('000).",
+    "fontSize": 20,
+    "subtitleFontSize": 11,
+    "subtitleColor": "#666",
+    "anchor": "start",
+    "offset": 10
+  },
+  "width": "container",
+  "height": 420,
+  "data": {
+    "url": "data/domestic_state_long.csv"
+  },
+  "transform": [
+    {
+      "filter": "datum.year == 2024"
+    },
+    {
+      "filter": "datum.state != 'MALAYSIA TOTAL'"
+    }
+  ],
+  "layer": [
+    {
+      "mark": {
+        "type": "bar",
+        "cornerRadiusEnd": 3
+      },
+      "encoding": {
+        "y": {
+          "field": "state",
+          "type": "nominal",
+          "sort": "-x",
+          "title": null,
+          "axis": {
+            "labelFontSize": 11,
+            "labelLimit": 160
+          }
+        },
+        "x": {
+          "field": "visitors_000",
+          "type": "quantitative",
+          "title": "Domestic Visitors ('000)",
+          "axis": {
+            "labelFontSize": 10,
+            "titleFontSize": 11,
+            "grid": true,
+            "gridColor": "#EEE"
+          }
+        },
+        "color": {
+          "field": "visitors_000",
+          "type": "quantitative",
+          "scale": {
+            "range": [
+              "#BDD7EE",
+              "#2E75B6",
+              "#1F4E79"
+            ]
+          },
+          "legend": null
+        },
+        "tooltip": [
+          {
+            "field": "state",
+            "title": "State"
+          },
+          {
+            "field": "visitors_000",
+            "title": "Visitors ('000)",
+            "format": ",.0f"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 4,
+        "fontSize": 10,
+        "color": "#333"
+      },
+      "encoding": {
+        "y": {
+          "field": "state",
+          "type": "nominal",
+          "sort": "-x"
+        },
+        "x": {
+          "field": "visitors_000",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "visitors_000",
+          "type": "quantitative",
+          "format": ",.0f"
+        }
+      }
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "background": "white"
+  }
+}

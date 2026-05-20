@@ -1,0 +1,186 @@
+/* ── Typography ── */
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background-color: #F5F7FA;
+  color: #1A1A2E;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── Header ── */
+.header {
+  background-color: #1F4E79;
+  color: white;
+  padding: 48px 80px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header h1 {
+  font-family: 'Trebuchet MS', Arial, sans-serif;
+  font-size: 3.2rem;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  max-width: 760px;
+  opacity: 0.9;
+  margin: 0 0 16px 0;
+}
+
+.meta {
+  font-size: 0.85rem;
+  opacity: 0.7;
+  margin: 0;
+}
+
+/* ── Sections ── */
+.section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 48px 80px;
+  border-bottom: 1px solid #DDE3ED;
+}
+
+.section h2 {
+  font-size: 1.6rem;
+  color: #1F4E79;
+  margin: 0 0 8px 0;
+  font-weight: 600;
+}
+
+.section-intro {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #444;
+  max-width: 760px;
+  margin: 0 0 32px 0;
+}
+
+/* ── Charts ── */
+.chart-container {
+  background: white;
+  border-radius: 8px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ── Footer ── */
+.footer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 80px;
+  font-size: 0.82rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* ── Two column grid ── */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+/* ── Three column grid ── */
+.grid-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+/* ── Wide left, narrow right (60/40 split) ── */
+.grid-6040 {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+/* ── Full width chart ── */
+.chart-full {
+  background: white;
+  border-radius: 8px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ── Chart inside a grid cell ── */
+.chart-cell {
+  background: white;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  box-sizing: border-box;
+}
+
+/* ── KPI / stat tile ── */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.kpi-tile {
+  background: #1F4E79;
+  color: white;
+  border-radius: 8px;
+  padding: 20px 24px;
+  text-align: center;
+}
+
+.kpi-tile .kpi-number {
+  font-size: 2rem;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.kpi-tile .kpi-label {
+  font-size: 0.85rem;
+  opacity: 0.85;
+  line-height: 1.4;
+}
+
+/* ── Annotation / callout box ── */
+.callout {
+  background: #FFF3CD;
+  border-left: 4px solid #FFC000;
+  border-radius: 4px;
+  padding: 14px 18px;
+  margin-bottom: 24px;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+.callout strong {
+  color: #1F4E79;
+}
+
+/* ── Section divider ── */
+.section-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #2E75B6;
+  margin-bottom: 6px;
+}
+
+.grid-4060 {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}

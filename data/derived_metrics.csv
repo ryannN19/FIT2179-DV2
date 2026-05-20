@@ -1,0 +1,17 @@
+state,dom_visitors_2024_000,pop_2024_000,dom_visitors_per_capita,intl_arrivals_2024,top3_share_pct,top1_country,magnitude_score,character_score,archetype
+Johor,17138,4184.4,4.096,17744548.0,90.5,Singapore,0.0,0.183,Peripheral Concentrated
+Kedah,14651,2217.1,6.608,828510.0,79.7,Thailand,0.146,0.401,Peripheral Concentrated
+Kelantan,10514,1887.9,5.569,541577.0,98.7,Thailand,0.086,0.018,Peripheral Concentrated
+Melaka,19128,1046.7,18.275,37919.0,98.5,Indonesia,0.826,0.022,Single-Market Dependent
+Negeri Sembilan,17785,1239.5,14.349,61425.0,99.6,Indonesia,0.598,0.0,Single-Market Dependent
+Pahang,20174,1667.7,12.097,8929.0,74.3,Singapore,0.466,0.51,Niche Diversified
+Pulau Pinang,16605,1800.5,9.222,1036729.0,73.7,Indonesia,0.299,0.522,Niche Diversified
+Perak,21776,2569.4,8.475,180334.0,90.4,Thailand,0.255,0.185,Peripheral Concentrated
+Perlis,3225,296.8,10.866,559590.0,94.2,Thailand,0.395,0.109,Peripheral Concentrated
+Selangor,34461,7362.7,4.68,8299628.0,50.0,China,0.034,1.0,Niche Diversified
+Terengganu,14461,1231.5,11.743,91.0,50.5,DNK,0.446,0.99,Niche Diversified
+Sabah,20592,3742.0,5.503,584180.0,78.7,China,0.082,0.421,Peripheral Concentrated
+Sarawak,19626,2517.5,7.796,1998341.0,92.9,Brunei,0.216,0.135,Peripheral Concentrated
+W.P. Kuala Lumpur,26983,2067.5,13.051,,,N/A,0.522,,Domestic-reliant
+W.P. Labuan,450,100.8,4.464,17365.0,78.6,Brunei,0.021,0.423,Peripheral Concentrated
+W.P. Putrajaya,2557,120.3,21.255,,,N/A,1.0,,Domestic-reliant

@@ -1,0 +1,104 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Inbound vs Domestic Tourism Expenditure, 2019–2024",
+    "subtitle": "RM Billion. Inbound = spending by foreign visitors in Malaysia. Domestic = spending by Malaysians within Malaysia.",
+    "fontSize": 20,
+    "subtitleFontSize": 11,
+    "subtitleColor": "#666",
+    "anchor": "start",
+    "offset": 10
+  },
+  "width": "container",
+  "height": 300,
+  "data": {
+    "url": "data/national_tsa.csv"
+  },
+  "transform": [
+    {
+      "fold": [
+        "inbound_exp_rm_bil",
+        "domestic_exp_rm_bil"
+      ],
+      "as": [
+        "type",
+        "expenditure"
+      ]
+    },
+    {
+      "calculate": "datum.type === 'inbound_exp_rm_bil' ? 'Inbound (Foreign Visitors)' : 'Domestic (Malaysian Travellers)'",
+      "as": "type_label"
+    }
+  ],
+  "mark": {
+    "type": "bar",
+    "cornerRadiusTopLeft": 3,
+    "cornerRadiusTopRight": 3
+  },
+  "encoding": {
+    "x": {
+      "field": "year",
+      "type": "ordinal",
+      "title": null,
+      "axis": {
+        "labelFontSize": 11,
+        "labelAngle": 0
+      }
+    },
+    "y": {
+      "field": "expenditure",
+      "type": "quantitative",
+      "title": "Expenditure (RM Billion)",
+      "axis": {
+        "labelFontSize": 10,
+        "titleFontSize": 11,
+        "grid": true,
+        "gridColor": "#EEE"
+      }
+    },
+    "color": {
+      "field": "type_label",
+      "type": "nominal",
+      "scale": {
+        "domain": [
+          "Inbound (Foreign Visitors)",
+          "Domestic (Malaysian Travellers)"
+        ],
+        "range": [
+          "#1F4E79",
+          "#00B0F0"
+        ]
+      },
+      "legend": {
+        "title": null,
+        "orient": "top",
+        "labelFontSize": 11
+      }
+    },
+    "xOffset": {
+      "field": "type_label",
+      "type": "nominal"
+    },
+    "tooltip": [
+      {
+        "field": "year",
+        "title": "Year"
+      },
+      {
+        "field": "type_label",
+        "title": "Type"
+      },
+      {
+        "field": "expenditure",
+        "title": "RM Billion",
+        "format": ".1f"
+      }
+    ]
+  },
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "background": "white"
+  }
+}

@@ -1,0 +1,329 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Tourism Magnitude vs Character: State Archetypes",
+    "subtitle": "Magnitude = domestic visitors per capita (normalised). Character = source market diversity (normalised, higher = more diverse).",
+    "fontSize": 15,
+    "subtitleFontSize": 11,
+    "subtitleColor": "#666",
+    "anchor": "start",
+    "offset": 10
+  },
+  "width": "container",
+  "height": 440,
+  "data": {
+    "url": "data/derived_metrics.csv"
+  },
+  "transform": [
+    {
+      "filter": "datum.magnitude_score != null && datum.character_score != null"
+    }
+  ],
+  "layer": [
+    {
+      "mark": {
+        "type": "rect",
+        "opacity": 0.04,
+        "color": "#2E75B6"
+      },
+      "encoding": {
+        "x": {
+          "datum": 0.5
+        },
+        "x2": {
+          "datum": 1.05
+        },
+        "y": {
+          "datum": 0.5
+        },
+        "y2": {
+          "datum": 1.05
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "rect",
+        "opacity": 0.04,
+        "color": "#C00000"
+      },
+      "encoding": {
+        "x": {
+          "datum": 0.5
+        },
+        "x2": {
+          "datum": 1.05
+        },
+        "y": {
+          "datum": -0.05
+        },
+        "y2": {
+          "datum": 0.5
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "rule",
+        "color": "#999",
+        "strokeDash": [
+          4,
+          4
+        ],
+        "strokeWidth": 1
+      },
+      "encoding": {
+        "x": {
+          "datum": 0.5
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "rule",
+        "color": "#999",
+        "strokeDash": [
+          4,
+          4
+        ],
+        "strokeWidth": 1
+      },
+      "encoding": {
+        "y": {
+          "datum": 0.5
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "fontSize": 10,
+        "color": "#2E75B6",
+        "fontWeight": "bold",
+        "opacity": 0.5
+      },
+      "encoding": {
+        "x": {
+          "datum": 0.76
+        },
+        "y": {
+          "datum": 1.02
+        },
+        "text": {
+          "value": "HIGH MAGNITUDE · DIVERSIFIED"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "fontSize": 10,
+        "color": "#C00000",
+        "fontWeight": "bold",
+        "opacity": 0.5
+      },
+      "encoding": {
+        "x": {
+          "datum": 0.76
+        },
+        "y": {
+          "datum": -0.02
+        },
+        "text": {
+          "value": "HIGH MAGNITUDE · CONCENTRATED"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "fontSize": 10,
+        "color": "#555",
+        "fontWeight": "bold",
+        "opacity": 0.5
+      },
+      "encoding": {
+        "x": {
+          "datum": 0.24
+        },
+        "y": {
+          "datum": 1.02
+        },
+        "text": {
+          "value": "LOW MAGNITUDE · DIVERSIFIED"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "fontSize": 10,
+        "color": "#555",
+        "fontWeight": "bold",
+        "opacity": 0.5
+      },
+      "encoding": {
+        "x": {
+          "datum": 0.24
+        },
+        "y": {
+          "datum": -0.02
+        },
+        "text": {
+          "value": "LOW MAGNITUDE · CONCENTRATED"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "circle",
+        "size": 120,
+        "opacity": 0.85
+      },
+      "encoding": {
+        "x": {
+          "field": "character_score",
+          "type": "quantitative",
+          "title": "Character Score — Source Market Diversity (0 = concentrated, 1 = diverse)",
+          "scale": {
+            "domain": [
+              -0.05,
+              1.05
+            ]
+          },
+          "axis": {
+            "labelFontSize": 10,
+            "titleFontSize": 11,
+            "grid": true,
+            "gridColor": "#EEE"
+          }
+        },
+        "y": {
+          "field": "magnitude_score",
+          "type": "quantitative",
+          "title": "Magnitude Score — Domestic Visitors per Capita (0 = low, 1 = high)",
+          "scale": {
+            "domain": [
+              -0.05,
+              1.05
+            ]
+          },
+          "axis": {
+            "labelFontSize": 10,
+            "titleFontSize": 11,
+            "grid": true,
+            "gridColor": "#EEE"
+          }
+        },
+        "color": {
+          "field": "archetype",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Global Hub",
+              "Single-Market Dependent",
+              "Niche Diversified",
+              "Peripheral Concentrated",
+              "Domestic-reliant"
+            ],
+            "range": [
+              "#1F4E79",
+              "#C00000",
+              "#00B050",
+              "#FFC000",
+              "#7030A0"
+            ]
+          },
+          "legend": {
+            "title": "Archetype",
+            "titleFontSize": 11,
+            "labelFontSize": 11,
+            "orient": "bottom-right"
+          }
+        },
+        "tooltip": [
+          {
+            "field": "state",
+            "title": "State"
+          },
+          {
+            "field": "archetype",
+            "title": "Archetype"
+          },
+          {
+            "field": "magnitude_score",
+            "title": "Magnitude Score",
+            "format": ".2f"
+          },
+          {
+            "field": "character_score",
+            "title": "Character Score",
+            "format": ".2f"
+          },
+          {
+            "field": "dom_visitors_per_capita",
+            "title": "Visitors per Capita",
+            "format": ".1f"
+          },
+          {
+            "field": "top3_share_pct",
+            "title": "Top-3 Market Share (%)",
+            "format": ".1f"
+          },
+          {
+            "field": "top1_country",
+            "title": "Top Source Market"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "fontSize": 10,
+        "dy": -10,
+        "fontWeight": "bold"
+      },
+      "encoding": {
+        "x": {
+          "field": "character_score",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "magnitude_score",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "state",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "archetype",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Global Hub",
+              "Single-Market Dependent",
+              "Niche Diversified",
+              "Peripheral Concentrated",
+              "Domestic-reliant"
+            ],
+            "range": [
+              "#1F4E79",
+              "#C00000",
+              "#00B050",
+              "#FFC000",
+              "#7030A0"
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "background": "white"
+  }
+}

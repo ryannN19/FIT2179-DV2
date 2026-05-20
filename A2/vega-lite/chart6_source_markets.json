@@ -1,0 +1,82 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Malaysia's Top 10 Source Markets, 2024",
+    "subtitle": "Number of international tourist arrivals by country of origin",
+    "fontSize": 20,
+    "subtitleFontSize": 11,
+    "subtitleColor": "#666",
+    "anchor": "start",
+    "offset": 15
+  },
+  "width": "container",
+  "height": 320,
+  "padding": {
+    "left": 25,
+    "right": 5,
+    "top": 5,
+    "bottom": 5
+  },
+  "data": {
+    "url": "data/arrivals_country.csv"
+  },
+  "transform": [
+    {
+      "filter": "datum.year == 2024"
+    },
+    {
+      "window": [
+        {
+          "op": "rank",
+          "as": "rank"
+        }
+      ],
+      "sort": [
+        {
+          "field": "arrivals",
+          "order": "descending"
+        }
+      ]
+    },
+    {
+      "filter": "datum.rank <= 10"
+    }
+  ],
+  "mark": {
+    "type": "bar",
+    "color": "#2E75B6",
+    "cornerRadiusEnd": 4
+  },
+  "encoding": {
+    "y": {
+      "field": "country_name",
+      "type": "nominal",
+      "sort": "-x",
+      "title": null,
+      "axis": {
+        "labelFontSize": 12,
+        "labelLimit": 150
+      }
+    },
+    "x": {
+      "field": "arrivals",
+      "type": "quantitative",
+      "title": "Tourist Arrivals (2024)",
+      "axis": {
+        "labelFontSize": 11,
+        "format": ",.0f"
+      }
+    },
+    "tooltip": [
+      {
+        "field": "country_name",
+        "title": "Country"
+      },
+      {
+        "field": "arrivals",
+        "title": "Arrivals",
+        "format": ","
+      }
+    ]
+  }
+}

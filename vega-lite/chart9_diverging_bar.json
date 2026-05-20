@@ -89,7 +89,8 @@
           "legend": {
             "title": null,
             "orient": "bottom-right",
-            "labelFontSize": 11
+            "labelFontSize": 11,
+            "labelLimit": 280
           }
         },
         "tooltip": [

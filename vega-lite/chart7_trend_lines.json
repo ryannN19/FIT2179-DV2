@@ -1,0 +1,533 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Top Source Markets: Tourist Arrivals Trend, 2019\u20132024",
+    "subtitle": "Number of arrivals trend from different countries. Click a country in the legend to highlight it.",
+    "fontSize": 25,
+    "subtitleFontSize": 18,
+    "subtitleColor": "#666",
+    "anchor": "start",
+    "offset": 10,
+    "font": "Arial",
+    "subtitleFont": "Arial"
+  },
+  "width": "container",
+  "height": 340,
+  "data": {
+    "values": [
+      {
+        "year": "2019",
+        "country": "BRN",
+        "country_name": "Brunei",
+        "arrivals": 1216123
+      },
+      {
+        "year": "2020",
+        "country": "BRN",
+        "country_name": "Brunei",
+        "arrivals": 187788
+      },
+      {
+        "year": "2021",
+        "country": "BRN",
+        "country_name": "Brunei",
+        "arrivals": 4162
+      },
+      {
+        "year": "2022",
+        "country": "BRN",
+        "country_name": "Brunei",
+        "arrivals": 398291
+      },
+      {
+        "year": "2023",
+        "country": "BRN",
+        "country_name": "Brunei",
+        "arrivals": 1113225
+      },
+      {
+        "year": "2024",
+        "country": "BRN",
+        "country_name": "Brunei",
+        "arrivals": 1435830
+      },
+      {
+        "year": "2019",
+        "country": "CHN",
+        "country_name": "China",
+        "arrivals": 3114257
+      },
+      {
+        "year": "2020",
+        "country": "CHN",
+        "country_name": "China",
+        "arrivals": 394813
+      },
+      {
+        "year": "2021",
+        "country": "CHN",
+        "country_name": "China",
+        "arrivals": 15555
+      },
+      {
+        "year": "2022",
+        "country": "CHN",
+        "country_name": "China",
+        "arrivals": 294311
+      },
+      {
+        "year": "2023",
+        "country": "CHN",
+        "country_name": "China",
+        "arrivals": 1661719
+      },
+      {
+        "year": "2024",
+        "country": "CHN",
+        "country_name": "China",
+        "arrivals": 3211029
+      },
+      {
+        "year": "2019",
+        "country": "IDN",
+        "country_name": "Indonesia",
+        "arrivals": 3623277
+      },
+      {
+        "year": "2020",
+        "country": "IDN",
+        "country_name": "Indonesia",
+        "arrivals": 792231
+      },
+      {
+        "year": "2021",
+        "country": "IDN",
+        "country_name": "Indonesia",
+        "arrivals": 20048
+      },
+      {
+        "year": "2022",
+        "country": "IDN",
+        "country_name": "Indonesia",
+        "arrivals": 1742038
+      },
+      {
+        "year": "2023",
+        "country": "IDN",
+        "country_name": "Indonesia",
+        "arrivals": 3734821
+      },
+      {
+        "year": "2024",
+        "country": "IDN",
+        "country_name": "Indonesia",
+        "arrivals": 3596939
+      },
+      {
+        "year": "2019",
+        "country": "SGP",
+        "country_name": "Singapore",
+        "arrivals": 10163882
+      },
+      {
+        "year": "2020",
+        "country": "SGP",
+        "country_name": "Singapore",
+        "arrivals": 2777821
+      },
+      {
+        "year": "2021",
+        "country": "SGP",
+        "country_name": "Singapore",
+        "arrivals": 17692
+      },
+      {
+        "year": "2022",
+        "country": "SGP",
+        "country_name": "Singapore",
+        "arrivals": 8389031
+      },
+      {
+        "year": "2023",
+        "country": "SGP",
+        "country_name": "Singapore",
+        "arrivals": 14885712
+      },
+      {
+        "year": "2024",
+        "country": "SGP",
+        "country_name": "Singapore",
+        "arrivals": 15049829
+      },
+      {
+        "year": "2019",
+        "country": "THA",
+        "country_name": "Thailand",
+        "arrivals": 1884306
+      },
+      {
+        "year": "2020",
+        "country": "THA",
+        "country_name": "Thailand",
+        "arrivals": 537336
+      },
+      {
+        "year": "2021",
+        "country": "THA",
+        "country_name": "Thailand",
+        "arrivals": 319365
+      },
+      {
+        "year": "2022",
+        "country": "THA",
+        "country_name": "Thailand",
+        "arrivals": 1213634
+      },
+      {
+        "year": "2023",
+        "country": "THA",
+        "country_name": "Thailand",
+        "arrivals": 2362222
+      },
+      {
+        "year": "2024",
+        "country": "THA",
+        "country_name": "Thailand",
+        "arrivals": 1962819
+      }
+    ]
+  },
+  "layer": [
+    {
+      "params": [
+        {
+          "name": "country_select",
+          "select": {
+            "type": "point",
+            "fields": [
+              "country_name"
+            ]
+          },
+          "bind": "legend"
+        }
+      ],
+      "mark": {
+        "type": "line",
+        "strokeWidth": 2.5,
+        "point": {
+          "filled": true,
+          "size": 50
+        }
+      },
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "ordinal",
+          "title": "Year",
+          "axis": {
+            "labelFontSize": 13,
+            "labelFont": "Arial",
+            "labelAngle": 0,
+            "titleFontSize": 13,
+            "titleFont": "Arial"
+          }
+        },
+        "y": {
+          "field": "arrivals",
+          "type": "quantitative",
+          "title": "Tourist Arrivals",
+          "axis": {
+            "labelFontSize": 13,
+            "labelFont": "Arial",
+            "titleFontSize": 13,
+            "titleFont": "Arial",
+            "format": ",.0f",
+            "grid": true,
+            "gridColor": "#E3F6FC"
+          }
+        },
+        "color": {
+          "field": "country_name",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Singapore",
+              "China",
+              "Indonesia",
+              "Thailand",
+              "Brunei"
+            ],
+            "range": [
+              "#FFD600",
+              "#E53935",
+              "#FF7043",
+              "#0277BD",
+              "#7B1FA2"
+            ]
+          },
+          "legend": {
+            "title": null,
+            "orient": "top",
+            "labelFontSize": 13,
+            "labelFont": "Arial"
+          }
+        },
+        "opacity": {
+          "condition": {
+            "param": "country_select",
+            "value": 1
+          },
+          "value": 0.15
+        },
+        "strokeWidth": {
+          "condition": {
+            "param": "country_select",
+            "value": 3
+          },
+          "value": 1
+        },
+        "tooltip": [
+          {
+            "field": "country_name",
+            "title": "Country"
+          },
+          {
+            "field": "year",
+            "title": "Year"
+          },
+          {
+            "field": "arrivals",
+            "title": "Arrivals",
+            "format": ","
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "rule",
+        "color": "#999",
+        "strokeDash": [
+          5,
+          4
+        ],
+        "strokeWidth": 1.2
+      },
+      "encoding": {
+        "x": {
+          "datum": "2022",
+          "type": "ordinal"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 4,
+        "fontSize": 12,
+        "font": "Arial",
+        "color": "#555"
+      },
+      "encoding": {
+        "x": {
+          "datum": "2022",
+          "type": "ordinal"
+        },
+        "y": {
+          "value": 15
+        },
+        "text": {
+          "value": "Borders reopen"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "rule",
+        "color": "#E53935",
+        "strokeDash": [
+          5,
+          4
+        ],
+        "strokeWidth": 1.2
+      },
+      "encoding": {
+        "x": {
+          "datum": "2023",
+          "type": "ordinal"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 4,
+        "fontSize": 12,
+        "font": "Arial",
+        "color": "#E53935"
+      },
+      "encoding": {
+        "x": {
+          "datum": "2023",
+          "type": "ordinal"
+        },
+        "y": {
+          "value": 15
+        },
+        "text": {
+          "value": "China visa-free"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.country == 'SGP' && datum.year == '2021'"
+        }
+      ],
+      "mark": {
+        "type": "rect",
+        "color": "white",
+        "opacity": 0.9,
+        "width": 190,
+        "height": 18,
+        "xOffset": 0,
+        "yOffset": -30
+      },
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "ordinal"
+        },
+        "y": {
+          "field": "arrivals",
+          "type": "quantitative"
+        },
+        "opacity": {
+          "condition": {
+            "param": "country_select",
+            "empty": false,
+            "value": 1
+          },
+          "value": 0
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.country == 'SGP' && datum.year == '2021'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "fontSize": 12,
+        "font": "Arial",
+        "color": "#FFD600",
+        "fontWeight": "bold",
+        "yOffset": -30
+      },
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "ordinal"
+        },
+        "y": {
+          "field": "arrivals",
+          "type": "quantitative"
+        },
+        "text": {
+          "value": "Near zero: land borders closed"
+        },
+        "opacity": {
+          "condition": {
+            "param": "country_select",
+            "empty": false,
+            "value": 1
+          },
+          "value": 0
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.country == 'CHN' && datum.year == '2023'"
+        }
+      ],
+      "mark": {
+        "type": "rect",
+        "color": "white",
+        "opacity": 0.9,
+        "width": 160,
+        "height": 18,
+        "xOffset": 0,
+        "yOffset": -16
+      },
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "ordinal"
+        },
+        "y": {
+          "field": "arrivals",
+          "type": "quantitative"
+        },
+        "opacity": {
+          "condition": {
+            "param": "country_select",
+            "empty": false,
+            "value": 1
+          },
+          "value": 0
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.country == 'CHN' && datum.year == '2023'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "fontSize": 12,
+        "font": "Arial",
+        "color": "#E53935",
+        "fontWeight": "bold",
+        "yOffset": -16
+      },
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "ordinal"
+        },
+        "y": {
+          "field": "arrivals",
+          "type": "quantitative"
+        },
+        "text": {
+          "value": "+465% \u2014 visa-free effect"
+        },
+        "opacity": {
+          "condition": {
+            "param": "country_select",
+            "empty": false,
+            "value": 1
+          },
+          "value": 0
+        }
+      }
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "background": "white"
+  }
+}

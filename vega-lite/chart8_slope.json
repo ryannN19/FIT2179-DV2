@@ -1,0 +1,599 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Domestic Tourism Recovery by State: 2020 vs 2024",
+    "subtitle": "Domestic visitor arrivals ('000). Click any line to highlight. Key states pre-coloured.",
+    "fontSize": 25,
+    "subtitleFontSize": 18,
+    "subtitleColor": "#666",
+    "anchor": "start",
+    "offset": 10,
+    "font": "Arial",
+    "subtitleFont": "Arial"
+  },
+  "width": "container",
+  "height": 440,
+  "data": {
+    "values": [
+      {
+        "year": "2020",
+        "state": "Johor",
+        "visitors_000": 7243.0
+      },
+      {
+        "year": "2024",
+        "state": "Johor",
+        "visitors_000": 17138.0
+      },
+      {
+        "year": "2020",
+        "state": "Kedah",
+        "visitors_000": 10831.0
+      },
+      {
+        "year": "2024",
+        "state": "Kedah",
+        "visitors_000": 14651.0
+      },
+      {
+        "year": "2020",
+        "state": "Kelantan",
+        "visitors_000": 6058.0
+      },
+      {
+        "year": "2024",
+        "state": "Kelantan",
+        "visitors_000": 10514.0
+      },
+      {
+        "year": "2020",
+        "state": "Melaka",
+        "visitors_000": 7275.0
+      },
+      {
+        "year": "2024",
+        "state": "Melaka",
+        "visitors_000": 19128.0
+      },
+      {
+        "year": "2020",
+        "state": "Negeri Sembilan",
+        "visitors_000": 7918.0
+      },
+      {
+        "year": "2024",
+        "state": "Negeri Sembilan",
+        "visitors_000": 17785.0
+      },
+      {
+        "year": "2020",
+        "state": "Pahang",
+        "visitors_000": 9905.0
+      },
+      {
+        "year": "2024",
+        "state": "Pahang",
+        "visitors_000": 20174.0
+      },
+      {
+        "year": "2020",
+        "state": "Perak",
+        "visitors_000": 13173.0
+      },
+      {
+        "year": "2024",
+        "state": "Perak",
+        "visitors_000": 21776.0
+      },
+      {
+        "year": "2020",
+        "state": "Perlis",
+        "visitors_000": 1193.0
+      },
+      {
+        "year": "2024",
+        "state": "Perlis",
+        "visitors_000": 3225.0
+      },
+      {
+        "year": "2020",
+        "state": "Pulau Pinang",
+        "visitors_000": 8929.0
+      },
+      {
+        "year": "2024",
+        "state": "Pulau Pinang",
+        "visitors_000": 16605.0
+      },
+      {
+        "year": "2020",
+        "state": "Sabah",
+        "visitors_000": 10337.0
+      },
+      {
+        "year": "2024",
+        "state": "Sabah",
+        "visitors_000": 20592.0
+      },
+      {
+        "year": "2020",
+        "state": "Sarawak",
+        "visitors_000": 9393.0
+      },
+      {
+        "year": "2024",
+        "state": "Sarawak",
+        "visitors_000": 19626.0
+      },
+      {
+        "year": "2020",
+        "state": "Selangor",
+        "visitors_000": 19715.0
+      },
+      {
+        "year": "2024",
+        "state": "Selangor",
+        "visitors_000": 34461.0
+      },
+      {
+        "year": "2020",
+        "state": "Terengganu",
+        "visitors_000": 7420.0
+      },
+      {
+        "year": "2024",
+        "state": "Terengganu",
+        "visitors_000": 14461.0
+      },
+      {
+        "year": "2020",
+        "state": "W.P. Kuala Lumpur",
+        "visitors_000": 12435.0
+      },
+      {
+        "year": "2024",
+        "state": "W.P. Kuala Lumpur",
+        "visitors_000": 26983.0
+      },
+      {
+        "year": "2020",
+        "state": "W.P. Labuan",
+        "visitors_000": 107.0
+      },
+      {
+        "year": "2024",
+        "state": "W.P. Labuan",
+        "visitors_000": 450.0
+      },
+      {
+        "year": "2020",
+        "state": "W.P. Putrajaya",
+        "visitors_000": 451.0
+      },
+      {
+        "year": "2024",
+        "state": "W.P. Putrajaya",
+        "visitors_000": 2557.0
+      }
+    ]
+  },
+  "params": [
+    {
+      "name": "state_click",
+      "value": null,
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+          "Johor",
+          "Kedah",
+          "Kelantan",
+          "Melaka",
+          "Negeri Sembilan",
+          "Pahang",
+          "Perak",
+          "Perlis",
+          "Pulau Pinang",
+          "Sabah",
+          "Sarawak",
+          "Selangor",
+          "Terengganu",
+          "W.P. Kuala Lumpur",
+          "W.P. Labuan",
+          "W.P. Putrajaya"
+        ],
+        "labels": [
+          "Show All",
+          "Johor",
+          "Kedah",
+          "Kelantan",
+          "Melaka",
+          "Negeri Sembilan",
+          "Pahang",
+          "Perak",
+          "Perlis",
+          "Pulau Pinang",
+          "Sabah",
+          "Sarawak",
+          "Selangor",
+          "Terengganu",
+          "W.P. Kuala Lumpur",
+          "W.P. Labuan",
+          "W.P. Putrajaya"
+        ],
+        "name": "Highlight State: "
+      }
+    }
+  ],
+  "transform": [
+    {
+      "calculate": "datum.state == 'Selangor' ? '#FFD600' : datum.state == 'W.P. Putrajaya' ? '#E53935' : datum.state == 'Kedah' ? '#0277BD' : '#B0BEC5'",
+      "as": "line_color"
+    },
+    {
+      "calculate": "state_click == null || datum.state == state_click ? 1 : 0",
+      "as": "is_selected"
+    }
+  ],
+  "layer": [
+    {
+      "mark": {
+        "type": "line",
+        "strokeWidth": 2
+      },
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "ordinal",
+          "title": "Year",
+          "axis": {
+            "labelFontSize": 15,
+            "labelFont": "Arial",
+            "labelFontWeight": "bold",
+            "labelAngle": 0,
+            "titleFontSize": 13,
+            "titleFont": "Arial"
+          }
+        },
+        "y": {
+          "field": "visitors_000",
+          "type": "quantitative",
+          "title": "Domestic Visitors ('000)",
+          "axis": {
+            "labelFontSize": 13,
+            "labelFont": "Arial",
+            "titleFontSize": 13,
+            "titleFont": "Arial",
+            "grid": true,
+            "gridColor": "#E3F6FC"
+          }
+        },
+        "color": {
+          "field": "line_color",
+          "type": "nominal",
+          "scale": null,
+          "legend": null
+        },
+        "detail": {
+          "field": "state",
+          "type": "nominal"
+        },
+        "opacity": {
+          "field": "is_selected",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              1
+            ],
+            "range": [
+              0.06,
+              0.85
+            ]
+          },
+          "legend": null
+        },
+        "strokeWidth": {
+          "field": "is_selected",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              1
+            ],
+            "range": [
+              0.8,
+              3
+            ]
+          },
+          "legend": null
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 60
+      },
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "ordinal"
+        },
+        "y": {
+          "field": "visitors_000",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "line_color",
+          "type": "nominal",
+          "scale": null,
+          "legend": null
+        },
+        "opacity": {
+          "field": "is_selected",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              1
+            ],
+            "range": [
+              0.06,
+              0.9
+            ]
+          },
+          "legend": null
+        },
+        "tooltip": [
+          {
+            "field": "state",
+            "title": "State"
+          },
+          {
+            "field": "year",
+            "title": "Year"
+          },
+          {
+            "field": "visitors_000",
+            "title": "Visitors ('000)",
+            "format": ",.0f"
+          }
+        ]
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.year == '2024'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 6,
+        "fontSize": 13,
+        "font": "Arial"
+      },
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "ordinal"
+        },
+        "y": {
+          "field": "visitors_000",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "state",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "line_color",
+          "type": "nominal",
+          "scale": null,
+          "legend": null
+        },
+        "opacity": {
+          "field": "is_selected",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              1
+            ],
+            "range": [
+              0.06,
+              1
+            ]
+          },
+          "legend": null
+        },
+        "fontWeight": {
+          "condition": {
+            "test": "datum.state == 'Selangor' || datum.state == 'W.P. Putrajaya' || datum.state == 'Kedah'",
+            "value": "bold"
+          },
+          "value": "normal"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.year == '2020'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "dx": -6,
+        "fontSize": 13,
+        "font": "Arial"
+      },
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "ordinal"
+        },
+        "y": {
+          "field": "visitors_000",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "state",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "line_color",
+          "type": "nominal",
+          "scale": null,
+          "legend": null
+        },
+        "opacity": {
+          "field": "is_selected",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              1
+            ],
+            "range": [
+              0.06,
+              1
+            ]
+          },
+          "legend": null
+        },
+        "fontWeight": {
+          "condition": {
+            "test": "datum.state == 'Selangor' || datum.state == 'W.P. Putrajaya' || datum.state == 'Kedah'",
+            "value": "bold"
+          },
+          "value": "normal"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "x": 0,
+            "y": 0
+          }
+        ]
+      },
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 80,
+        "color": "#FFD600",
+        "x": 80,
+        "y": 10
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "x": 0,
+            "y": 0
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "fontSize": 12,
+        "font": "Arial",
+        "color": "#333",
+        "x": 96,
+        "y": 14,
+        "text": "Selangor \u2014 highest absolute growth"
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "x": 0,
+            "y": 0
+          }
+        ]
+      },
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 80,
+        "color": "#E53935",
+        "x": 80,
+        "y": 30
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "x": 0,
+            "y": 0
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "fontSize": 12,
+        "font": "Arial",
+        "color": "#333",
+        "x": 96,
+        "y": 34,
+        "text": "W.P. Putrajaya \u2014 fastest % recovery (+467%)"
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "x": 0,
+            "y": 0
+          }
+        ]
+      },
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 80,
+        "color": "#0277BD",
+        "x": 80,
+        "y": 50
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "x": 0,
+            "y": 0
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "fontSize": 12,
+        "font": "Arial",
+        "color": "#333",
+        "x": 96,
+        "y": 54,
+        "text": "Kedah \u2014 slowest recovery (+35%)"
+      }
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "background": "white"
+  }
+}

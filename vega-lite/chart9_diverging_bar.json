@@ -1,0 +1,483 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "How Concentrated is Each State's International Tourism?",
+    "subtitle": [
+      "Top-3 source country share by state, 2024.",
+      "Labels show: top source market \u00b7 state name.",
+      "Right of centre = above avg (82.2%). Left = below."
+    ],
+    "fontSize": 25,
+    "subtitleFontSize": 18,
+    "subtitleColor": "#666",
+    "anchor": "start",
+    "offset": 10,
+    "font": "Arial",
+    "subtitleFont": "Arial"
+  },
+  "width": "container",
+  "height": 580,
+  "data": {
+    "values": [
+      {
+        "year": 2024,
+        "state": "Johor",
+        "top3_share_pct": 90.5,
+        "top1_country": "Singapore",
+        "top2_country": "Indonesia",
+        "deviation_from_mean": 8.299999999999997,
+        "concentration_label": "Above average \u2014 More Concentrated",
+        "country_state": "Singapore \u00b7 Johor"
+      },
+      {
+        "year": 2024,
+        "state": "Kedah",
+        "top3_share_pct": 79.7,
+        "top1_country": "Thailand",
+        "top2_country": "Indonesia",
+        "deviation_from_mean": -2.5,
+        "concentration_label": "Below average \u2014 More Diversified",
+        "country_state": "Thailand \u00b7 Kedah"
+      },
+      {
+        "year": 2024,
+        "state": "Kelantan",
+        "top3_share_pct": 98.7,
+        "top1_country": "Thailand",
+        "top2_country": "KHM",
+        "deviation_from_mean": 16.5,
+        "concentration_label": "Above average \u2014 More Concentrated",
+        "country_state": "Thailand \u00b7 Kelantan"
+      },
+      {
+        "year": 2024,
+        "state": "Melaka",
+        "top3_share_pct": 98.5,
+        "top1_country": "Indonesia",
+        "top2_country": "Singapore",
+        "deviation_from_mean": 16.299999999999997,
+        "concentration_label": "Above average \u2014 More Concentrated",
+        "country_state": "Indonesia \u00b7 Melaka"
+      },
+      {
+        "year": 2024,
+        "state": "Negeri Sembilan",
+        "top3_share_pct": 99.6,
+        "top1_country": "Indonesia",
+        "top2_country": "Thailand",
+        "deviation_from_mean": 17.39999999999999,
+        "concentration_label": "Above average \u2014 More Concentrated",
+        "country_state": "Indonesia \u00b7 Negeri Sembilan"
+      },
+      {
+        "year": 2024,
+        "state": "Pahang",
+        "top3_share_pct": 74.3,
+        "top1_country": "Singapore",
+        "top2_country": "China",
+        "deviation_from_mean": -7.900000000000006,
+        "concentration_label": "Below average \u2014 More Diversified",
+        "country_state": "Singapore \u00b7 Pahang"
+      },
+      {
+        "year": 2024,
+        "state": "Perak",
+        "top3_share_pct": 90.4,
+        "top1_country": "Thailand",
+        "top2_country": "Singapore",
+        "deviation_from_mean": 8.200000000000003,
+        "concentration_label": "Above average \u2014 More Concentrated",
+        "country_state": "Thailand \u00b7 Perak"
+      },
+      {
+        "year": 2024,
+        "state": "Perlis",
+        "top3_share_pct": 94.2,
+        "top1_country": "Thailand",
+        "top2_country": "KHM",
+        "deviation_from_mean": 12.0,
+        "concentration_label": "Above average \u2014 More Concentrated",
+        "country_state": "Thailand \u00b7 Perlis"
+      },
+      {
+        "year": 2024,
+        "state": "Pulau Pinang",
+        "top3_share_pct": 73.7,
+        "top1_country": "Indonesia",
+        "top2_country": "Singapore",
+        "deviation_from_mean": -8.5,
+        "concentration_label": "Below average \u2014 More Diversified",
+        "country_state": "Indonesia \u00b7 Pulau Pinang"
+      },
+      {
+        "year": 2024,
+        "state": "Sabah",
+        "top3_share_pct": 78.7,
+        "top1_country": "China",
+        "top2_country": "South Korea",
+        "deviation_from_mean": -3.5,
+        "concentration_label": "Below average \u2014 More Diversified",
+        "country_state": "China \u00b7 Sabah"
+      },
+      {
+        "year": 2024,
+        "state": "Sarawak",
+        "top3_share_pct": 92.9,
+        "top1_country": "Brunei",
+        "top2_country": "Indonesia",
+        "deviation_from_mean": 10.700000000000003,
+        "concentration_label": "Above average \u2014 More Concentrated",
+        "country_state": "Brunei \u00b7 Sarawak"
+      },
+      {
+        "year": 2024,
+        "state": "Selangor",
+        "top3_share_pct": 50.0,
+        "top1_country": "China",
+        "top2_country": "Indonesia",
+        "deviation_from_mean": -32.2,
+        "concentration_label": "Below average \u2014 More Diversified",
+        "country_state": "China \u00b7 Selangor"
+      },
+      {
+        "year": 2024,
+        "state": "Terengganu",
+        "top3_share_pct": 50.5,
+        "top1_country": "DNK",
+        "top2_country": "Vietnam",
+        "deviation_from_mean": -31.700000000000003,
+        "concentration_label": "Below average \u2014 More Diversified",
+        "country_state": "DNK \u00b7 Terengganu"
+      },
+      {
+        "year": 2024,
+        "state": "W.P. Labuan",
+        "top3_share_pct": 78.6,
+        "top1_country": "Brunei",
+        "top2_country": "Philippines",
+        "deviation_from_mean": -3.6000000000000085,
+        "concentration_label": "Below average \u2014 More Diversified",
+        "country_state": "Brunei \u00b7 W.P. Labuan"
+      }
+    ]
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "rule",
+        "color": "#333",
+        "strokeWidth": 1.5
+      },
+      "encoding": {
+        "x": {
+          "datum": 0
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "bar",
+        "cornerRadiusEnd": 3
+      },
+      "encoding": {
+        "y": {
+          "field": "state",
+          "type": "nominal",
+          "sort": {
+            "field": "deviation_from_mean",
+            "order": "descending"
+          },
+          "title": null,
+          "axis": {
+            "labelFontSize": 13,
+            "labelFont": "Arial",
+            "labelLimit": 180,
+            "ticks": false,
+            "domain": false
+          }
+        },
+        "x": {
+          "field": "deviation_from_mean",
+          "type": "quantitative",
+          "title": "Deviation from national average concentration (82.2%)",
+          "axis": {
+            "labelFontSize": 13,
+            "labelFont": "Arial",
+            "titleFontSize": 13,
+            "titleFont": "Arial",
+            "grid": true,
+            "gridColor": "#E3F6FC",
+            "labelExpr": "datum.value > 0 ? '+' + round(datum.value) + 'pp' : round(datum.value) + 'pp'"
+          }
+        },
+        "color": {
+          "field": "concentration_label",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Above average \u2014 More Concentrated",
+              "Below average \u2014 More Diversified"
+            ],
+            "range": [
+              "#0277BD",
+              "#FFD600"
+            ]
+          },
+          "legend": {
+            "title": null,
+            "orient": "top  ",
+            "labelFontSize": 13,
+            "labelFont": "Arial",
+            "labelLimit": 280
+          }
+        },
+        "tooltip": [
+          {
+            "field": "state",
+            "title": "State of Entry"
+          },
+          {
+            "field": "top1_country",
+            "title": "Top Source Market"
+          },
+          {
+            "field": "top2_country",
+            "title": "2nd Source Market"
+          },
+          {
+            "field": "top3_share_pct",
+            "title": "Top-3 Share (%)",
+            "format": ".1f"
+          },
+          {
+            "field": "deviation_from_mean",
+            "title": "vs National Avg (pp)",
+            "format": "+.1f"
+          },
+          {
+            "field": "concentration_label",
+            "title": "Classification"
+          }
+        ]
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.deviation_from_mean >= 0"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize": 13,
+        "font": "Arial",
+        "fontWeight": "bold",
+        "color": "#0277BD",
+        "align": "left",
+        "dx": 4,
+        "dy": 0
+      },
+      "encoding": {
+        "y": {
+          "field": "state",
+          "type": "nominal",
+          "sort": {
+            "field": "deviation_from_mean",
+            "order": "descending"
+          },
+          "axis": null
+        },
+        "x": {
+          "field": "deviation_from_mean",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "top3_share_pct",
+          "type": "quantitative",
+          "format": ".0f"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.deviation_from_mean < 0"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize": 13,
+        "font": "Arial",
+        "fontWeight": "bold",
+        "color": "#B8860B",
+        "align": "right",
+        "dx": -4,
+        "dy": 0
+      },
+      "encoding": {
+        "y": {
+          "field": "state",
+          "type": "nominal",
+          "sort": {
+            "field": "deviation_from_mean",
+            "order": "descending"
+          },
+          "axis": null
+        },
+        "x": {
+          "field": "deviation_from_mean",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "top3_share_pct",
+          "type": "quantitative",
+          "format": ".0f"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.deviation_from_mean >= 0"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize": 11,
+        "font": "Arial",
+        "color": "#555",
+        "fontStyle": "italic",
+        "align": "right",
+        "dx": -4,
+        "dy": 0
+      },
+      "encoding": {
+        "y": {
+          "field": "state",
+          "type": "nominal",
+          "sort": {
+            "field": "deviation_from_mean",
+            "order": "descending"
+          },
+          "axis": null
+        },
+        "x": {
+          "datum": 0
+        },
+        "text": {
+          "field": "country_state",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.deviation_from_mean < 0"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize": 11,
+        "font": "Arial",
+        "color": "#555",
+        "fontStyle": "italic",
+        "align": "left",
+        "dx": 4,
+        "dy": 0
+      },
+      "encoding": {
+        "y": {
+          "field": "state",
+          "type": "nominal",
+          "sort": {
+            "field": "deviation_from_mean",
+            "order": "descending"
+          },
+          "axis": null
+        },
+        "x": {
+          "datum": 0
+        },
+        "text": {
+          "field": "country_state",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.state == 'Negeri Sembilan'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize": 12,
+        "font": "Arial",
+        "color": "#0277BD",
+        "fontWeight": "bold",
+        "align": "center",
+        "xOffset": -20,
+        "yOffset": 30
+      },
+      "encoding": {
+        "x": {
+          "field": "deviation_from_mean",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "state",
+          "type": "nominal",
+          "sort": {
+            "field": "deviation_from_mean",
+            "order": "descending"
+          }
+        },
+        "text": {
+          "value": "Most concentrated"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.state == 'Selangor'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize": 13,
+        "font": "Arial",
+        "color": "#B8860B",
+        "fontWeight": "bold",
+        "align": "center",
+        "xOffset": 20,
+        "yOffset": -30
+      },
+      "encoding": {
+        "x": {
+          "field": "deviation_from_mean",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "state",
+          "type": "nominal",
+          "sort": {
+            "field": "deviation_from_mean",
+            "order": "descending"
+          }
+        },
+        "text": {
+          "value": "Most diversified"
+        }
+      }
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "background": "white"
+  }
+}

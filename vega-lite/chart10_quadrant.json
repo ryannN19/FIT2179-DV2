@@ -1,0 +1,506 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Tourism Magnitude vs Character: State Archetypes",
+    "subtitle": [
+      "Magnitude = domestic visitors per capita (normalised).",
+      "Character = source market diversity (higher = more diverse).",
+      "Click an archetype in the legend to highlight."
+    ],
+    "fontSize": 25,
+    "subtitleFontSize": 18,
+    "subtitleColor": "#666",
+    "anchor": "start",
+    "offset": 10,
+    "font": "Arial",
+    "subtitleFont": "Arial"
+  },
+  "width": "container",
+  "height": 440,
+  "data": {
+    "values": [
+      {
+        "state": "Johor",
+        "archetype": "Peripheral Concentrated",
+        "magnitude_score": 0.0,
+        "character_score": 0.183,
+        "dom_visitors_per_capita": 4.096,
+        "top3_share_pct": 90.5,
+        "top1_country": "Singapore"
+      },
+      {
+        "state": "Kedah",
+        "archetype": "Peripheral Concentrated",
+        "magnitude_score": 0.146,
+        "character_score": 0.401,
+        "dom_visitors_per_capita": 6.608,
+        "top3_share_pct": 79.7,
+        "top1_country": "Thailand"
+      },
+      {
+        "state": "Kelantan",
+        "archetype": "Peripheral Concentrated",
+        "magnitude_score": 0.086,
+        "character_score": 0.018,
+        "dom_visitors_per_capita": 5.569,
+        "top3_share_pct": 98.7,
+        "top1_country": "Thailand"
+      },
+      {
+        "state": "Melaka",
+        "archetype": "Single-Market Dependent",
+        "magnitude_score": 0.826,
+        "character_score": 0.022,
+        "dom_visitors_per_capita": 18.275,
+        "top3_share_pct": 98.5,
+        "top1_country": "Indonesia"
+      },
+      {
+        "state": "Negeri Sembilan",
+        "archetype": "Single-Market Dependent",
+        "magnitude_score": 0.598,
+        "character_score": 0.0,
+        "dom_visitors_per_capita": 14.349,
+        "top3_share_pct": 99.6,
+        "top1_country": "Indonesia"
+      },
+      {
+        "state": "Pahang",
+        "archetype": "Niche Diversified",
+        "magnitude_score": 0.466,
+        "character_score": 0.51,
+        "dom_visitors_per_capita": 12.097,
+        "top3_share_pct": 74.3,
+        "top1_country": "Singapore"
+      },
+      {
+        "state": "Pulau Pinang",
+        "archetype": "Niche Diversified",
+        "magnitude_score": 0.299,
+        "character_score": 0.522,
+        "dom_visitors_per_capita": 9.222,
+        "top3_share_pct": 73.7,
+        "top1_country": "Indonesia"
+      },
+      {
+        "state": "Perak",
+        "archetype": "Peripheral Concentrated",
+        "magnitude_score": 0.255,
+        "character_score": 0.185,
+        "dom_visitors_per_capita": 8.475,
+        "top3_share_pct": 90.4,
+        "top1_country": "Thailand"
+      },
+      {
+        "state": "Perlis",
+        "archetype": "Peripheral Concentrated",
+        "magnitude_score": 0.395,
+        "character_score": 0.109,
+        "dom_visitors_per_capita": 10.866,
+        "top3_share_pct": 94.2,
+        "top1_country": "Thailand"
+      },
+      {
+        "state": "Selangor",
+        "archetype": "Niche Diversified",
+        "magnitude_score": 0.034,
+        "character_score": 1.0,
+        "dom_visitors_per_capita": 4.68,
+        "top3_share_pct": 50.0,
+        "top1_country": "China"
+      },
+      {
+        "state": "Terengganu",
+        "archetype": "Niche Diversified",
+        "magnitude_score": 0.446,
+        "character_score": 0.99,
+        "dom_visitors_per_capita": 11.743,
+        "top3_share_pct": 50.5,
+        "top1_country": "DNK"
+      },
+      {
+        "state": "Sabah",
+        "archetype": "Peripheral Concentrated",
+        "magnitude_score": 0.082,
+        "character_score": 0.421,
+        "dom_visitors_per_capita": 5.503,
+        "top3_share_pct": 78.7,
+        "top1_country": "China"
+      },
+      {
+        "state": "Sarawak",
+        "archetype": "Peripheral Concentrated",
+        "magnitude_score": 0.216,
+        "character_score": 0.135,
+        "dom_visitors_per_capita": 7.796,
+        "top3_share_pct": 92.9,
+        "top1_country": "Brunei"
+      },
+      {
+        "state": "W.P. Kuala Lumpur",
+        "archetype": "Domestic-reliant",
+        "magnitude_score": 0.522,
+        "character_score": 0.0,
+        "dom_visitors_per_capita": 13.051,
+        "top3_share_pct": null,
+        "top1_country": "N/A"
+      },
+      {
+        "state": "W.P. Labuan",
+        "archetype": "Peripheral Concentrated",
+        "magnitude_score": 0.021,
+        "character_score": 0.423,
+        "dom_visitors_per_capita": 4.464,
+        "top3_share_pct": 78.6,
+        "top1_country": "Brunei"
+      },
+      {
+        "state": "W.P. Putrajaya",
+        "archetype": "Domestic-reliant",
+        "magnitude_score": 1.0,
+        "character_score": 0.0,
+        "dom_visitors_per_capita": 21.255,
+        "top3_share_pct": null,
+        "top1_country": "N/A"
+      }
+    ]
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "rect",
+        "opacity": 0.015,
+        "color": "#0277BD"
+      },
+      "encoding": {
+        "x": {
+          "datum": 0.5
+        },
+        "x2": {
+          "datum": 1.05
+        },
+        "y": {
+          "datum": 0.5
+        },
+        "y2": {
+          "datum": 1.05
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "rect",
+        "opacity": 0.015,
+        "color": "#FF7043"
+      },
+      "encoding": {
+        "x": {
+          "datum": 0.5
+        },
+        "x2": {
+          "datum": 1.05
+        },
+        "y": {
+          "datum": -0.05
+        },
+        "y2": {
+          "datum": 0.5
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "rule",
+        "color": "#999",
+        "strokeDash": [
+          4,
+          4
+        ],
+        "strokeWidth": 1
+      },
+      "encoding": {
+        "x": {
+          "datum": 0.5
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "rule",
+        "color": "#999",
+        "strokeDash": [
+          4,
+          4
+        ],
+        "strokeWidth": 1
+      },
+      "encoding": {
+        "y": {
+          "datum": 0.5
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "fontSize": 12,
+        "font": "Arial",
+        "color": "#0277BD",
+        "fontWeight": "bold",
+        "opacity": 0.5
+      },
+      "encoding": {
+        "x": {
+          "datum": 0.76
+        },
+        "y": {
+          "datum": 1.02
+        },
+        "text": {
+          "value": "HIGH MAGNITUDE \u00b7 DIVERSIFIED"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "fontSize": 12,
+        "font": "Arial",
+        "color": "#FF7043",
+        "fontWeight": "bold",
+        "opacity": 0.5
+      },
+      "encoding": {
+        "x": {
+          "datum": 0.76
+        },
+        "y": {
+          "datum": -0.02
+        },
+        "text": {
+          "value": "HIGH MAGNITUDE \u00b7 CONCENTRATED"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "fontSize": 12,
+        "font": "Arial",
+        "color": "#555",
+        "fontWeight": "normal",
+        "opacity": 0.5
+      },
+      "encoding": {
+        "x": {
+          "datum": 0.24
+        },
+        "y": {
+          "datum": 1.02
+        },
+        "text": {
+          "value": "LOW MAGNITUDE \u00b7 DIVERSIFIED"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "fontSize": 12,
+        "font": "Arial",
+        "color": "#555",
+        "fontWeight": "normal",
+        "opacity": 0.5
+      },
+      "encoding": {
+        "x": {
+          "datum": 0.24
+        },
+        "y": {
+          "datum": -0.04
+        },
+        "text": {
+          "value": "LOW MAGNITUDE \u00b7 CONCENTRATED"
+        }
+      }
+    },
+    {
+      "params": [
+        {
+          "name": "archetype_select",
+          "select": {
+            "type": "point",
+            "fields": [
+              "archetype"
+            ]
+          },
+          "bind": "legend"
+        }
+      ],
+      "mark": {
+        "type": "circle",
+        "size": 180
+      },
+      "encoding": {
+        "x": {
+          "field": "character_score",
+          "type": "quantitative",
+          "title": "Character Score \u2014 Source Market Diversity (0 = concentrated, 1 = diverse)",
+          "scale": {
+            "domain": [
+              -0.05,
+              1.05
+            ]
+          },
+          "axis": {
+            "labelFontSize": 13,
+            "labelFont": "Arial",
+            "titleFontSize": 13,
+            "titleFont": "Arial",
+            "grid": true,
+            "gridColor": "#E3F6FC"
+          }
+        },
+        "y": {
+          "field": "magnitude_score",
+          "type": "quantitative",
+          "title": "Magnitude Score \u2014 Domestic Visitors per Capita (0 = low, 1 = high)",
+          "scale": {
+            "domain": [
+              -0.05,
+              1.05
+            ]
+          },
+          "axis": {
+            "labelFontSize": 13,
+            "labelFont": "Arial",
+            "titleFontSize": 13,
+            "titleFont": "Arial",
+            "grid": true,
+            "gridColor": "#E3F6FC"
+          }
+        },
+        "color": {
+          "field": "archetype",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Single-Market Dependent",
+              "Niche Diversified",
+              "Peripheral Concentrated",
+              "Domestic-reliant"
+            ],
+            "range": [
+              "#E53935",
+              "#00838F",
+              "#FFD600",
+              "#7B1FA2"
+            ]
+          },
+          "legend": {
+            "title": "Archetype",
+            "titleFontSize": 13,
+            "titleFont": "Arial",
+            "labelFontSize": 13,
+            "labelFont": "Arial",
+            "orient": "top"
+          }
+        },
+        "opacity": {
+          "condition": {
+            "param": "archetype_select",
+            "value": 0.85
+          },
+          "value": 0.1
+        },
+        "tooltip": [
+          {
+            "field": "state",
+            "title": "State"
+          },
+          {
+            "field": "archetype",
+            "title": "Archetype"
+          },
+          {
+            "field": "magnitude_score",
+            "title": "Magnitude Score",
+            "format": ".2f"
+          },
+          {
+            "field": "character_score",
+            "title": "Character Score",
+            "format": ".2f"
+          },
+          {
+            "field": "dom_visitors_per_capita",
+            "title": "Visitors per Capita",
+            "format": ".1f"
+          },
+          {
+            "field": "top3_share_pct",
+            "title": "Top-3 Market Share (%)",
+            "format": ".1f"
+          },
+          {
+            "field": "top1_country",
+            "title": "Top Source Market"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "fontSize": 11,
+        "font": "Arial",
+        "dy": -10
+      },
+      "encoding": {
+        "x": {
+          "field": "character_score",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "magnitude_score",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "state",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "archetype",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Single-Market Dependent",
+              "Niche Diversified",
+              "Peripheral Concentrated",
+              "Domestic-reliant"
+            ],
+            "range": [
+              "#E53935",
+              "#00838F",
+              "#FFD600",
+              "#7B1FA2"
+            ]
+          }
+        },
+        "opacity": {
+          "condition": {
+            "param": "archetype_select",
+            "value": 1
+          },
+          "value": 0.1
+        }
+      }
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "background": "white"
+  }
+}

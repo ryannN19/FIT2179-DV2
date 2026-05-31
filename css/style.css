@@ -1,0 +1,704 @@
+/* ── Google Fonts ── */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Share+Tech+Mono&display=swap');
+
+/* ── Base ── */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #E3F6FC;
+  color: #1A1A2E;
+  margin: 0;
+  padding: 0;
+  font-size: 17px;
+}
+
+/* ══════════════════════════════════════════
+   BOARDING PASS HEADER
+══════════════════════════════════════════ */
+.header {
+  max-width: 100%;
+  padding: 16px 40px;
+  background-color: #E3F6FC;
+}
+
+.boarding-pass {
+  display: flex;
+  align-items: stretch;
+  background: white;
+  border-radius: 10px;
+  border: 1.5px solid #DDE3ED;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(2, 119, 189, 0.12);
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.boarding-pass::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, #0277BD 0%, #4FC3F7 55%, #FFD600 100%);
+  z-index: 1;
+}
+
+.boarding-pass::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: #FFD600;
+  z-index: 1;
+}
+
+.bp-main {
+  flex: 1;
+  padding: 60px 36px 48px 36px;
+  background: #0277BD;
+  position: relative;
+  overflow: hidden;
+}
+
+.bp-main::after {
+  content: '✈';
+  position: absolute;
+  right: -30px;
+  top: -10px;
+  font-size: 300px;
+  opacity: 0.05;
+  color: white;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.bp-unit-label {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 22px;
+  letter-spacing: 3px;
+  color: #81D4FA;
+  margin: 0 0 10px 0;
+}
+
+.bp-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 110px;
+  color: white;
+  margin: 0;
+  line-height: 0.92;
+  letter-spacing: 3px;
+}
+
+.bp-subtitle {
+  font-family: 'Arial', sans-serif;
+  font-size: 18px;
+  color: #B3E5FC;
+  margin: 12px 0 0 0;
+  max-width: 600px;
+  line-height: 1.65;
+  letter-spacing: 0.3px;
+}
+
+.bp-tear {
+  width: 30px;
+  flex-shrink: 0;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.bp-tear::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+  background: repeating-linear-gradient(to bottom,
+      #DDE3ED 0px, #DDE3ED 7px,
+      transparent 7px, transparent 15px);
+}
+
+.bp-tear-label {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 16px;
+  letter-spacing: 3px;
+  color: #CCC;
+  transform: rotate(90deg);
+  white-space: nowrap;
+  position: relative;
+  z-index: 1;
+}
+
+.bp-stub {
+  width: 160px;
+  flex-shrink: 0;
+  padding: 90px 18px 60px 18px;
+  background: #FAFBFD;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.bp-route {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.bp-airport {
+  text-align: center;
+}
+
+.bp-iata {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 60px;
+  color: #0277BD;
+  margin: 0;
+  line-height: 1;
+}
+
+.bp-airport-label {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 18px;
+  color: #AAA;
+  letter-spacing: 1px;
+  display: block;
+  margin-top: 2px;
+}
+
+.bp-plane-icon {
+  font-size: 18px;
+  color: #FFD600;
+}
+
+.bp-fields {
+  border-top: 0.5px solid #DDE3ED;
+  padding-top: 10px;
+}
+
+.bp-field {
+  margin-bottom: 10px;
+}
+
+.bp-field-label {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 18px;
+  color: #AAA;
+  margin: 0;
+  letter-spacing: 1.5px;
+}
+
+.bp-field-value {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 25px;
+  color: #1A1A2E;
+  margin: 2px 0 0;
+  font-weight: bold;
+}
+
+.bp-field-value.accent {
+  color: #0277BD;
+  font-size: 25px;
+  font-weight: normal;
+}
+
+/* ══════════════════════════════════════════
+   DEPARTURE BOARD SECTION HEADERS (Acts 1–4)
+══════════════════════════════════════════ */
+.section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px 48px 40px;
+}
+
+.departure-strip {
+  background: #01579B;
+  padding: 20px 28px;
+  display: flex;
+  align-items: center;
+  border-bottom: 3px solid #FFD600;
+  border-radius: 10px 10px 0 0;
+  flex-wrap: wrap;
+  gap: 0;
+  row-gap: 4px;
+  margin-top: 32px;
+}
+
+.departure-strip .ds-plane {
+  font-size: 20px;
+  color: #FFD600;
+  margin-right: 14px;
+}
+
+.departure-strip .ds-gate {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 40px;
+  color: #FFD600;
+  letter-spacing: 2px;
+  margin-right: 14px;
+}
+
+.departure-strip .ds-sep {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 11px;
+  color: #4FC3F7;
+  margin-right: 14px;
+}
+
+.departure-strip .ds-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 40px;
+  color: white;
+  letter-spacing: 2px;
+  margin-right: 14px;
+}
+
+.departure-strip .ds-meta {
+  font-family: 'Arial', sans-serif;
+  font-size: 18px;
+  color: #B3E5FC;
+  letter-spacing: 1px;
+  margin-right: 14px;
+}
+
+.departure-strip .ds-status {
+  font-family: 'Arial', sans-serif;
+  font-size: 18px;
+  letter-spacing: 1px;
+  color: #FFD600;
+}
+
+.section-body {
+  background: white;
+  border-radius: 0 0 10px 10px;
+  border: 1.5px solid #DDE3ED;
+  border-top: none;
+  padding: 32px 40px 36px 40px;
+}
+
+.section-intro {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #444;
+  max-width: 760px;
+  margin: 0 0 32px 0;
+}
+
+/* ══════════════════════════════════════════
+   AIRPLANE WINDOW KPI TILES (Act 1 only)
+══════════════════════════════════════════ */
+.kpi-windows-wrapper {
+  position: relative;
+  margin-bottom: 8px;
+}
+
+.kpi-arc-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.kpi-windows-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 24px;
+}
+
+.kpi-window-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+/* Outer bezel */
+.kpi-window-outer {
+  width: 168px;
+  height: 208px;
+  border-radius: 50%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.kpi-window-outer.blue {
+  background: #5B8DB8;
+}
+
+.kpi-window-outer.gold {
+  background: #f0d662;
+}
+
+/* Middle groove ring */
+.kpi-window-middle {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.kpi-window-outer.blue .kpi-window-middle {
+  background: #3A6F9A;
+}
+
+.kpi-window-outer.gold .kpi-window-middle {
+  background: #6B5C1A;
+}
+
+/* Inner glass panel */
+.kpi-window-glass {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #EBF7FD 0%, #C8E9F7 55%, #A8D8F0 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 16px;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Glare highlight */
+.kpi-window-glass::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 18px;
+  width: 32px;
+  height: 16px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.65);
+  transform: rotate(-30deg);
+  pointer-events: none;
+}
+
+.kpi-window-number {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 36px;
+  color: #0277BD;
+  line-height: 1;
+  position: relative;
+  z-index: 1;
+}
+
+.kpi-window-label {
+  font-family: 'Arial', sans-serif;
+  font-size: 11px;
+  color: #0277BD;
+  letter-spacing: 1px;
+  line-height: 1.6;
+  margin-top: 8px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ══════════════════════════════════════════
+   CHARTS
+══════════════════════════════════════════ */
+.chart-full {
+  background: white;
+  border-radius: 8px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.chart-cell {
+  background: white;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  box-sizing: border-box;
+}
+
+/* ── Passport Key Insight ── */
+details.pcallout {
+  margin-bottom: 24px;
+  cursor: pointer;
+  user-select: none;
+  max-width: 700px;
+  /* ← add this */
+  margin-left: auto;
+  /* ← add this */
+  margin-right: auto;
+  /* ← add this */
+}
+
+details.pcallout summary {
+  list-style: none;
+  outline: none;
+}
+
+details.pcallout summary::-webkit-details-marker {
+  display: none;
+}
+
+.pcover {
+  background: #01579B;
+  border-radius: 8px;
+  border: 3px solid #FFD600;
+  padding: 36px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 10px;
+  position: relative;
+  overflow: hidden;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.pcover::before {
+  content: '';
+  position: absolute;
+  inset: 7px;
+  border: 1px solid rgba(255, 214, 0, 0.3);
+  border-radius: 3px;
+  pointer-events: none;
+}
+
+.pcover-plane {
+  font-size: 52px;
+  color: #FFD600;
+  line-height: 1;
+}
+
+.pcover-country {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 50px;
+  color: #FFD600;
+  letter-spacing: 6px;
+  margin: 0;
+}
+
+.pcover-sub {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 18px;
+  color: rgba(255, 214, 0, 0.65);
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+.pcover-cta {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 18px;
+  color: rgba(255, 214, 0, 0.9);
+  letter-spacing: 2px;
+  margin-top: 10px;
+  border-top: 1px solid rgba(255, 214, 0, 0.25);
+  padding-top: 12px;
+  width: 100%;
+}
+
+.popening {
+  display: flex;
+  border: 3px solid #01579B;
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+  overflow: hidden;
+  min-height: 300px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.pspine {
+  width: 8px;
+  background: linear-gradient(to right, #012F5E 0%, #0277BD 50%, #01579B 100%);
+  flex-shrink: 0;
+}
+
+.pleft {
+  width: 220px;
+  flex-shrink: 0;
+  background: #F5F0E8;
+  padding: 24px 20px;
+  position: relative;
+  overflow: hidden;
+  border-right: 1px solid #D5CFC4;
+}
+
+.pleft::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(0deg, transparent, transparent 9px, rgba(1, 87, 155, 0.06) 9px, rgba(1, 87, 155, 0.06) 10px),
+    repeating-linear-gradient(60deg, transparent, transparent 9px, rgba(1, 87, 155, 0.04) 9px, rgba(1, 87, 155, 0.04) 10px),
+    repeating-linear-gradient(120deg, transparent, transparent 9px, rgba(1, 87, 155, 0.03) 9px, rgba(1, 87, 155, 0.03) 10px);
+  pointer-events: none;
+}
+
+.pleft-emblem {
+  font-size: 60px;
+  text-align: center;
+  opacity: 0.1;
+  line-height: 1;
+  margin-bottom: 14px;
+  position: relative;
+}
+
+.pleft-country {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 40px;
+  color: #01579B;
+  letter-spacing: 3px;
+  text-align: center;
+  position: relative;
+  margin: 0 0 4px;
+}
+
+.pleft-ministry {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 18px;
+  color: #666;
+  letter-spacing: 1px;
+  text-align: center;
+  position: relative;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.pwaves {
+  margin-top: 18px;
+  position: relative;
+}
+
+.pwaves svg {
+  width: 100%;
+  opacity: 0.15;
+}
+
+.pright {
+  flex: 1;
+  background: #F5F0E8;
+  padding: 24px 30px;
+  position: relative;
+}
+
+.pright::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(0deg, transparent, transparent 9px, rgba(1, 87, 155, 0.04) 9px, rgba(1, 87, 155, 0.04) 10px);
+  pointer-events: none;
+}
+
+.pr-label {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 18px;
+  color: #01579B;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 0 0 3px;
+  position: relative;
+}
+
+.pr-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 28px;
+  color: #01579B;
+  letter-spacing: 2px;
+  margin: 0 0 16px;
+  line-height: 1.1;
+  position: relative;
+  border-bottom: 1px solid rgba(1, 87, 155, 0.3);
+  padding-bottom: 12px;
+}
+
+.pr-text {
+  font-family: 'Arial', sans-serif;
+  font-size: 16px;
+  color: #222;
+  line-height: 1.75;
+  position: relative;
+  margin: 0 0 12px;
+  max-width: 340px;
+}
+
+.pr-text strong {
+  color: #01579B;
+}
+
+.pr-hl {
+  color: #C62828;
+  font-weight: bold;
+}
+
+.pr-link {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 13px;
+  color: #01579B;
+  letter-spacing: 1.5px;
+  text-decoration: underline dotted #FFD600;
+  text-underline-offset: 3px;
+  position: relative;
+  display: block;
+  margin-top: 4px;
+}
+
+.pr-link:hover {
+  color: #B8860B;
+}
+
+.pr-link-inline {
+  color: #01579B;
+  font-weight: bold;
+  text-decoration: underline dotted #FFD600;
+  text-underline-offset: 3px;
+}
+
+.pr-link-inline:hover {
+  color: #B8860B;
+}
+
+.ppagenum {
+  position: absolute;
+  bottom: 14px;
+  right: 18px;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 11px;
+  color: #AAA;
+  letter-spacing: 2px;
+}
+
+/* ── Grids ── */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.grid-4060 {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+/* ── Footer ── */
+.footer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 80px;
+  font-size: 0.92rem;
+  color: #555;
+  line-height: 1.7;
+}

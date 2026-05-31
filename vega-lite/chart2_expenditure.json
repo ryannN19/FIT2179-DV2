@@ -1,0 +1,261 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Inbound vs Domestic Tourism Expenditure, 2019\u20132024",
+    "subtitle": [
+      "RM Billion. Inbound = spending by foreign visitors. Domestic = spending by Malaysians.",
+      "Click a series in the legend to highlight it."
+    ],
+    "fontSize": 25,
+    "subtitleFontSize": 18,
+    "subtitleColor": "#666",
+    "anchor": "start",
+    "offset": 10,
+    "font": "Arial",
+    "subtitleFont": "Arial"
+  },
+  "width": "container",
+  "height": 400,
+  "data": {
+    "values": [
+      {
+        "year": "2019",
+        "year_int": 2019,
+        "type_label": "Inbound (Foreign Visitors)",
+        "expenditure": 89.4
+      },
+      {
+        "year": "2019",
+        "year_int": 2019,
+        "type_label": "Domestic (Malaysians)",
+        "expenditure": 92.6
+      },
+      {
+        "year": "2020",
+        "year_int": 2020,
+        "type_label": "Inbound (Foreign Visitors)",
+        "expenditure": 13.7
+      },
+      {
+        "year": "2020",
+        "year_int": 2020,
+        "type_label": "Domestic (Malaysians)",
+        "expenditure": 38.6
+      },
+      {
+        "year": "2021",
+        "year_int": 2021,
+        "type_label": "Inbound (Foreign Visitors)",
+        "expenditure": 0.5
+      },
+      {
+        "year": "2021",
+        "year_int": 2021,
+        "type_label": "Domestic (Malaysians)",
+        "expenditure": 17.5
+      },
+      {
+        "year": "2022",
+        "year_int": 2022,
+        "type_label": "Inbound (Foreign Visitors)",
+        "expenditure": 33.8
+      },
+      {
+        "year": "2022",
+        "year_int": 2022,
+        "type_label": "Domestic (Malaysians)",
+        "expenditure": 59.2
+      },
+      {
+        "year": "2023",
+        "year_int": 2023,
+        "type_label": "Inbound (Foreign Visitors)",
+        "expenditure": 75.8
+      },
+      {
+        "year": "2023",
+        "year_int": 2023,
+        "type_label": "Domestic (Malaysians)",
+        "expenditure": 78.7
+      },
+      {
+        "year": "2024",
+        "year_int": 2024,
+        "type_label": "Inbound (Foreign Visitors)",
+        "expenditure": 107.0
+      },
+      {
+        "year": "2024",
+        "year_int": 2024,
+        "type_label": "Domestic (Malaysians)",
+        "expenditure": 98.4
+      }
+    ]
+  },
+  "layer": [
+    {
+      "params": [
+        {
+          "name": "series_select",
+          "select": {
+            "type": "point",
+            "fields": [
+              "type_label"
+            ]
+          },
+          "bind": "legend"
+        }
+      ],
+      "mark": {
+        "type": "bar",
+        "cornerRadiusTopLeft": 3,
+        "cornerRadiusTopRight": 3
+      },
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "ordinal",
+          "title": "YEAR",
+          "axis": {
+            "labelFontSize": 13,
+            "labelFont": "Arial",
+            "labelAngle": 0,
+            "titleFontSize": 13,
+            "titleFont": "Arial"
+          }
+        },
+        "y": {
+          "field": "expenditure",
+          "type": "quantitative",
+          "title": "Expenditure (RM Billion)",
+          "axis": {
+            "labelFontSize": 13,
+            "labelFont": "Arial",
+            "titleFontSize": 13,
+            "titleFont": "Arial",
+            "grid": true,
+            "gridColor": "#E3F6FC"
+          }
+        },
+        "color": {
+          "field": "type_label",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Inbound (Foreign Visitors)",
+              "Domestic (Malaysians)"
+            ],
+            "range": [
+              "#0277BD",
+              "#FFD600"
+            ]
+          },
+          "legend": {
+            "title": null,
+            "orient": "top",
+            "labelFontSize": 13,
+            "labelFont": "Arial",
+            "labelLimit": 300,
+            "columns": 1
+          }
+        },
+        "xOffset": {
+          "field": "type_label",
+          "type": "nominal"
+        },
+        "opacity": {
+          "condition": {
+            "param": "series_select",
+            "value": 1
+          },
+          "value": 0.2
+        },
+        "tooltip": [
+          {
+            "field": "year",
+            "title": "Year"
+          },
+          {
+            "field": "type_label",
+            "title": "Type"
+          },
+          {
+            "field": "expenditure",
+            "title": "RM Billion",
+            "format": ".1f"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "rule",
+        "color": "#E53935",
+        "strokeWidth": 1.2,
+        "strokeDash": [
+          4,
+          3
+        ]
+      },
+      "encoding": {
+        "x": {
+          "datum": "2021",
+          "type": "ordinal"
+        },
+        "y": {
+          "datum": 17.5
+        },
+        "y2": {
+          "datum": 30
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "rect",
+        "color": "white",
+        "opacity": 0.9,
+        "width": 160,
+        "height": 20,
+        "xOffset": 0
+      },
+      "encoding": {
+        "x": {
+          "datum": "2021",
+          "type": "ordinal"
+        },
+        "y": {
+          "datum": 38
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "fontSize": 12,
+        "font": "Arial",
+        "color": "#E53935",
+        "fontWeight": "bold"
+      },
+      "encoding": {
+        "x": {
+          "datum": "2021",
+          "type": "ordinal"
+        },
+        "y": {
+          "datum": 38
+        },
+        "text": {
+          "value": "Domestic: 35\u00d7 inbound"
+        }
+      }
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "background": "white"
+  }
+}

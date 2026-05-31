@@ -1,0 +1,355 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Malaysia's Tourism Archetypes by State",
+    "subtitle": [
+      "Each state classified by tourism magnitude (volume) and character (source market diversity).",
+      "Use dropdown to highlight a specific archetype."
+    ],
+    "fontSize": 25,
+    "subtitleFontSize": 18,
+    "subtitleColor": "#666",
+    "anchor": "start",
+    "offset": 10,
+    "font": "Arial",
+    "subtitleFont": "Arial"
+  },
+  "width": "container",
+  "height": 500,
+  "projection": {
+    "type": "mercator"
+  },
+  "params": [
+    {
+      "name": "archetype_filter",
+      "value": null,
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+          "Domestic-reliant",
+          "Niche Diversified",
+          "Peripheral Concentrated",
+          "Single-Market Dependent"
+        ],
+        "labels": [
+          "Show All",
+          "Domestic-reliant",
+          "Niche Diversified",
+          "Peripheral Concentrated",
+          "Single-Market Dependent"
+        ],
+        "name": "Highlight Archetype: "
+      }
+    }
+  ],
+  "layer": [
+    {
+      "data": {
+        "url": "data/malaysia_states.topojson",
+        "format": {
+          "type": "topojson",
+          "feature": "data"
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#E0E0E0",
+        "stroke": "white",
+        "strokeWidth": 1.5
+      }
+    },
+    {
+      "data": {
+        "url": "data/malaysia_states.topojson",
+        "format": {
+          "type": "topojson",
+          "feature": "data"
+        }
+      },
+      "transform": [
+        {
+          "calculate": "datum.properties.shapeName == 'Malacca' ? 'Melaka' : datum.properties.shapeName == 'Penang' ? 'Pulau Pinang' : datum.properties.shapeName == 'Kuala Lumpur' ? 'W.P. Kuala Lumpur' : datum.properties.shapeName == 'Labuan' ? 'W.P. Labuan' : datum.properties.shapeName == 'Putrajaya' ? 'W.P. Putrajaya' : datum.properties.shapeName",
+          "as": "state_name"
+        },
+        {
+          "lookup": "state_name",
+          "from": {
+            "data": {
+              "values": [
+                {
+                  "state": "Johor",
+                  "archetype": "Peripheral Concentrated",
+                  "magnitude_score": 0.0,
+                  "character_score": 0.183,
+                  "top1_country": "Singapore",
+                  "dom_visitors_2024_000": 17138.0,
+                  "top3_share_pct": 90.5,
+                  "dom_visitors_per_capita": 4.096
+                },
+                {
+                  "state": "Kedah",
+                  "archetype": "Peripheral Concentrated",
+                  "magnitude_score": 0.146,
+                  "character_score": 0.401,
+                  "top1_country": "Thailand",
+                  "dom_visitors_2024_000": 14651.0,
+                  "top3_share_pct": 79.7,
+                  "dom_visitors_per_capita": 6.608
+                },
+                {
+                  "state": "Kelantan",
+                  "archetype": "Peripheral Concentrated",
+                  "magnitude_score": 0.086,
+                  "character_score": 0.018,
+                  "top1_country": "Thailand",
+                  "dom_visitors_2024_000": 10514.0,
+                  "top3_share_pct": 98.7,
+                  "dom_visitors_per_capita": 5.569
+                },
+                {
+                  "state": "Melaka",
+                  "archetype": "Single-Market Dependent",
+                  "magnitude_score": 0.826,
+                  "character_score": 0.022,
+                  "top1_country": "Indonesia",
+                  "dom_visitors_2024_000": 19128.0,
+                  "top3_share_pct": 98.5,
+                  "dom_visitors_per_capita": 18.275
+                },
+                {
+                  "state": "Negeri Sembilan",
+                  "archetype": "Single-Market Dependent",
+                  "magnitude_score": 0.598,
+                  "character_score": 0.0,
+                  "top1_country": "Indonesia",
+                  "dom_visitors_2024_000": 17785.0,
+                  "top3_share_pct": 99.6,
+                  "dom_visitors_per_capita": 14.349
+                },
+                {
+                  "state": "Pahang",
+                  "archetype": "Niche Diversified",
+                  "magnitude_score": 0.466,
+                  "character_score": 0.51,
+                  "top1_country": "Singapore",
+                  "dom_visitors_2024_000": 20174.0,
+                  "top3_share_pct": 74.3,
+                  "dom_visitors_per_capita": 12.097
+                },
+                {
+                  "state": "Pulau Pinang",
+                  "archetype": "Niche Diversified",
+                  "magnitude_score": 0.299,
+                  "character_score": 0.522,
+                  "top1_country": "Indonesia",
+                  "dom_visitors_2024_000": 16605.0,
+                  "top3_share_pct": 73.7,
+                  "dom_visitors_per_capita": 9.222
+                },
+                {
+                  "state": "Perak",
+                  "archetype": "Peripheral Concentrated",
+                  "magnitude_score": 0.255,
+                  "character_score": 0.185,
+                  "top1_country": "Thailand",
+                  "dom_visitors_2024_000": 21776.0,
+                  "top3_share_pct": 90.4,
+                  "dom_visitors_per_capita": 8.475
+                },
+                {
+                  "state": "Perlis",
+                  "archetype": "Peripheral Concentrated",
+                  "magnitude_score": 0.395,
+                  "character_score": 0.109,
+                  "top1_country": "Thailand",
+                  "dom_visitors_2024_000": 3225.0,
+                  "top3_share_pct": 94.2,
+                  "dom_visitors_per_capita": 10.866
+                },
+                {
+                  "state": "Selangor",
+                  "archetype": "Niche Diversified",
+                  "magnitude_score": 0.034,
+                  "character_score": 1.0,
+                  "top1_country": "China",
+                  "dom_visitors_2024_000": 34461.0,
+                  "top3_share_pct": 50.0,
+                  "dom_visitors_per_capita": 4.68
+                },
+                {
+                  "state": "Terengganu",
+                  "archetype": "Niche Diversified",
+                  "magnitude_score": 0.446,
+                  "character_score": 0.99,
+                  "top1_country": "DNK",
+                  "dom_visitors_2024_000": 14461.0,
+                  "top3_share_pct": 50.5,
+                  "dom_visitors_per_capita": 11.743
+                },
+                {
+                  "state": "Sabah",
+                  "archetype": "Peripheral Concentrated",
+                  "magnitude_score": 0.082,
+                  "character_score": 0.421,
+                  "top1_country": "China",
+                  "dom_visitors_2024_000": 20592.0,
+                  "top3_share_pct": 78.7,
+                  "dom_visitors_per_capita": 5.503
+                },
+                {
+                  "state": "Sarawak",
+                  "archetype": "Peripheral Concentrated",
+                  "magnitude_score": 0.216,
+                  "character_score": 0.135,
+                  "top1_country": "Brunei",
+                  "dom_visitors_2024_000": 19626.0,
+                  "top3_share_pct": 92.9,
+                  "dom_visitors_per_capita": 7.796
+                },
+                {
+                  "state": "W.P. Kuala Lumpur",
+                  "archetype": "Domestic-reliant",
+                  "magnitude_score": 0.522,
+                  "character_score": null,
+                  "top1_country": "N/A",
+                  "dom_visitors_2024_000": 26983.0,
+                  "top3_share_pct": null,
+                  "dom_visitors_per_capita": 13.051
+                },
+                {
+                  "state": "W.P. Labuan",
+                  "archetype": "Peripheral Concentrated",
+                  "magnitude_score": 0.021,
+                  "character_score": 0.423,
+                  "top1_country": "Brunei",
+                  "dom_visitors_2024_000": 450.0,
+                  "top3_share_pct": 78.6,
+                  "dom_visitors_per_capita": 4.464
+                },
+                {
+                  "state": "W.P. Putrajaya",
+                  "archetype": "Domestic-reliant",
+                  "magnitude_score": 1.0,
+                  "character_score": null,
+                  "top1_country": "N/A",
+                  "dom_visitors_2024_000": 2557.0,
+                  "top3_share_pct": null,
+                  "dom_visitors_per_capita": 21.255
+                }
+              ]
+            },
+            "key": "state",
+            "fields": [
+              "archetype",
+              "magnitude_score",
+              "character_score",
+              "top1_country",
+              "dom_visitors_2024_000",
+              "top3_share_pct",
+              "dom_visitors_per_capita"
+            ]
+          }
+        },
+        {
+          "calculate": "archetype_filter == null || datum.archetype == archetype_filter ? 1 : 0.1",
+          "as": "is_selected"
+        }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "stroke": "white",
+        "strokeWidth": 1.5
+      },
+      "encoding": {
+        "color": {
+          "field": "archetype",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Single-Market Dependent",
+              "Niche Diversified",
+              "Peripheral Concentrated",
+              "Domestic-reliant"
+            ],
+            "range": [
+              "#E53935",
+              "#00838F",
+              "#FFD600",
+              "#7B1FA2"
+            ]
+          },
+          "legend": {
+            "title": "Tourism Archetype",
+            "titleFontSize": 13,
+            "titleFont": "Arial",
+            "labelFontSize": 13,
+            "labelFont": "Arial",
+            "orient": "bottom-right",
+            "symbolSize": 200
+          }
+        },
+        "opacity": {
+          "field": "is_selected",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0.1,
+              1
+            ],
+            "range": [
+              0.1,
+              1
+            ]
+          },
+          "legend": null
+        },
+        "tooltip": [
+          {
+            "field": "state_name",
+            "title": "State"
+          },
+          {
+            "field": "archetype",
+            "title": "Archetype"
+          },
+          {
+            "field": "top1_country",
+            "title": "Top Source Market"
+          },
+          {
+            "field": "top3_share_pct",
+            "title": "Top-3 Market Share (%)",
+            "format": ".1f"
+          },
+          {
+            "field": "magnitude_score",
+            "title": "Magnitude Score",
+            "format": ".2f"
+          },
+          {
+            "field": "character_score",
+            "title": "Character Score",
+            "format": ".2f"
+          },
+          {
+            "field": "dom_visitors_2024_000",
+            "title": "Domestic Visitors ('000)",
+            "format": ",.0f"
+          },
+          {
+            "field": "dom_visitors_per_capita",
+            "title": "Visitors per Capita",
+            "format": ".1f"
+          }
+        ]
+      }
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "background": "white"
+  }
+}

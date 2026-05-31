@@ -1,0 +1,251 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Domestic Tourist Arrivals by State, 2024",
+    "subtitle": "Number of domestic visitors in thousands ('000).",
+    "fontSize": 25,
+    "subtitleFontSize": 18,
+    "subtitleColor": "#666",
+    "anchor": "start",
+    "offset": 10,
+    "font": "Arial",
+    "subtitleFont": "Arial"
+  },
+  "width": "container",
+  "height": 420,
+  "data": {
+    "url": "data/domestic_state_long.csv"
+  },
+  "transform": [
+    {
+      "filter": "datum.year == 2024"
+    },
+    {
+      "filter": "datum.state != 'MALAYSIA TOTAL'"
+    },
+    {
+      "calculate": "datum.state === 'Selangor' ? '#FFD600' : '#0288D1'",
+      "as": "bar_color"
+    }
+  ],
+  "layer": [
+    {
+      "mark": {
+        "type": "bar",
+        "cornerRadiusEnd": 3
+      },
+      "encoding": {
+        "y": {
+          "field": "state",
+          "type": "nominal",
+          "sort": {
+            "field": "visitors_000",
+            "order": "descending"
+          },
+          "title": null,
+          "axis": {
+            "labelFontSize": 13,
+            "labelFont": "Arial",
+            "labelLimit": 160
+          }
+        },
+        "x": {
+          "field": "visitors_000",
+          "type": "quantitative",
+          "title": "Domestic Visitors ('000)",
+          "axis": {
+            "labelFontSize": 13,
+            "labelFont": "Arial",
+            "titleFontSize": 13,
+            "titleFont": "Arial",
+            "grid": true,
+            "gridColor": "#E3F6FC"
+          }
+        },
+        "color": {
+          "field": "bar_color",
+          "type": "nominal",
+          "scale": null,
+          "legend": null
+        },
+        "tooltip": [
+          {
+            "field": "state",
+            "title": "State"
+          },
+          {
+            "field": "visitors_000",
+            "title": "Visitors ('000)",
+            "format": ",.0f"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 4,
+        "fontSize": 13,
+        "font": "Arial",
+        "color": "#333"
+      },
+      "encoding": {
+        "y": {
+          "field": "state",
+          "type": "nominal",
+          "sort": {
+            "field": "visitors_000",
+            "order": "descending"
+          }
+        },
+        "x": {
+          "field": "visitors_000",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "visitors_000",
+          "type": "quantitative",
+          "format": ",.0f"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "rule",
+        "color": "#E53935",
+        "strokeDash": [
+          5,
+          4
+        ],
+        "strokeWidth": 1.5
+      },
+      "encoding": {
+        "x": {
+          "datum": 16258
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "fontSize": 13,
+        "font": "Arial",
+        "color": "#E53935"
+      },
+      "encoding": {
+        "x": {
+          "datum": 16500
+        },
+        "y": {
+          "value": 400
+        },
+        "text": {
+          "value": "National avg: 16,258"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.state == 'Selangor'"
+        }
+      ],
+      "mark": {
+        "type": "rect",
+        "color": "white",
+        "opacity": 0.9,
+        "width": 190,
+        "height": 18,
+        "xOffset": 0,
+        "yOffset": -43
+      },
+      "encoding": {
+        "x": {
+          "field": "visitors_000",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "state",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.state == 'Selangor'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "fontSize": 13,
+        "font": "Arial",
+        "color": "#B8860B",
+        "yOffset": -43
+      },
+      "encoding": {
+        "x": {
+          "field": "visitors_000",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "state",
+          "type": "nominal"
+        },
+        "text": {
+          "value": "Leads KL by 28% · 77× Labuan"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.state == 'Selangor'"
+        }
+      ],
+      "mark": {
+        "type": "rule",
+        "color": "#B8860B",
+        "strokeWidth": 1,
+        "xOffset": -20
+      },
+      "encoding": {
+        "x": {
+          "field": "visitors_000",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "state",
+          "type": "nominal",
+          "sort": {
+            "field": "visitors_000",
+            "order": "descending"
+          }
+        },
+        "yOffset": {
+          "value": -20
+        },
+        "y2": {
+          "field": "state",
+          "type": "nominal",
+          "sort": {
+            "field": "visitors_000",
+            "order": "descending"
+          }
+        },
+        "y2Offset": {
+          "value": -80
+        }
+      }
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "background": "white"
+  }
+}

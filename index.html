@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Tourism Tightrope — Malaysian Tourism Analysis</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/purecss@3.0.0/build/pure-min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+    <!-- ══════════════════════════════════════
+         BOARDING PASS HEADER
+    ══════════════════════════════════════ -->
+    <div class="header">
+        <div class="boarding-pass">
+
+            <div class="bp-main">
+                <p class="bp-unit-label">FIT2179 Data Visualisation &nbsp;·&nbsp; Monash University Malaysia</p>
+                <h1 class="bp-title">The Tourism<br>Tightrope</h1>
+                <p class="bp-subtitle">
+                    Malaysia's tourism industry generates RM291 billion and employs 3.54 million people.
+                    But beneath the headline numbers, not every state shares equally in this boom —
+                    and some are far more exposed to collapse than others.
+                </p>
+            </div>
+
+            <div class="bp-tear">
+                <span class="bp-tear-label">BOARDING PASS</span>
+            </div>
+
+            <div class="bp-stub">
+                <div class="bp-route">
+                    <div class="bp-airport" style="text-align: left;">
+                        <p class="bp-iata">ANY</p>
+                        <span class="bp-airport-label">FROM</span>
+                    </div>
+                    <span class="bp-plane-icon">✈</span>
+                    <div class="bp-airport" style="text-align: left;">
+                        <p class="bp-iata">MLS</p>
+                        <span class="bp-airport-label">TO</span>
+                    </div>
+                </div>
+
+                <div class="bp-fields">
+                    <div class="bp-field">
+                        <p class="bp-field-label">PASSENGER</p>
+                        <p class="bp-field-value">SOO JUN HUI</p>
+                    </div>
+                    <div class="bp-field">
+                        <p class="bp-field-label">DATE</p>
+                        <p class="bp-field-value">MAY 2026</p>
+                    </div>
+                    <div class="bp-field">
+                        <p class="bp-field-label">DATA</p>
+                        <p class="bp-field-value accent">DOSM · TOURISM MY</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ══════════════════════════════════════
+         ACT 1 — THE ENGINE
+    ══════════════════════════════════════ -->
+    <div class="section">
+        <div class="departure-strip">
+            <span class="ds-plane">✈</span>
+            <span class="ds-gate">GATE 01</span>
+            <span class="ds-sep">|</span>
+            <span class="ds-title">THE ENGINE</span>
+            <span class="ds-sep">|</span>
+            <span class="ds-meta">PERIOD: 2019–2024</span>
+            <span class="ds-sep">|</span>
+            <span class="ds-status">STATUS: RECOVERED ✓</span>
+        </div>
+
+        <div class="section-body">
+            <p class="section-intro">
+                Tourism contributes 15.1% to Malaysia's GDP — a recovery from the near-total
+                collapse during the pandemic. But how stable is this engine, and who benefits from it?
+            </p>
+
+            <!-- Airplane window KPI tiles -->
+            <div class="kpi-windows-wrapper">
+                <svg class="kpi-arc-svg" viewBox="0 0 600 170" preserveAspectRatio="none">
+                    <path d="M 100 85 Q 300 5 500 85" stroke="#B3E5FC" stroke-width="2.5" stroke-dasharray="7,5"
+                        fill="none" />
+                    <text x="48" y="93" font-size="22" fill="#FFD600" text-anchor="middle">✈</text>
+                    <circle cx="100" cy="85" r="5" fill="#4FC3F7" opacity="0.7" />
+                    <circle cx="300" cy="30" r="5" fill="#4FC3F7" opacity="0.7" />
+                    <circle cx="500" cy="85" r="5" fill="#4FC3F7" opacity="0.7" />
+                </svg>
+
+                <div class="kpi-windows-grid">
+
+                    <div class="kpi-window-wrap">
+                        <div class="kpi-window-outer blue">
+                            <div class="kpi-window-middle">
+                                <div class="kpi-window-glass">
+                                    <span class="kpi-window-number">15.1%</span>
+                                    <span class="kpi-window-label">TOURISM SHARE<br>OF GDP (2024)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="kpi-window-wrap">
+                        <div class="kpi-window-outer gold">
+                            <div class="kpi-window-middle">
+                                <div class="kpi-window-glass">
+                                    <span class="kpi-window-number">RM291.9B</span>
+                                    <span class="kpi-window-label">GROSS VALUE<br>ADDED (GVATI)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="kpi-window-wrap">
+                        <div class="kpi-window-outer blue">
+                            <div class="kpi-window-middle">
+                                <div class="kpi-window-glass">
+                                    <span class="kpi-window-number">3.54M</span>
+                                    <span class="kpi-window-label">EMPLOYED IN<br>TOURISM (2024)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="chart-full" id="chart1"></div>
+            <div class="chart-full" id="chart2"></div>
+        </div>
+    </div>
+
+
+    <!-- ══════════════════════════════════════
+         ACT 2 — WHO BENEFITS
+    ══════════════════════════════════════ -->
+    <div class="section">
+        <div class="departure-strip">
+            <span class="ds-plane">✈</span>
+            <span class="ds-gate">GATE 02</span>
+            <span class="ds-sep">|</span>
+            <span class="ds-title">WHO BENEFITS?</span>
+            <span class="ds-sep">|</span>
+            <span class="ds-meta">SCOPE: ALL 16 STATES</span>
+            <span class="ds-sep">|</span>
+            <span class="ds-status">STATUS: UNEVEN ⚠</span>
+        </div>
+
+        <div class="section-body">
+            <p class="section-intro">
+                Selangor, Kuala Lumpur and Perak attract the most domestic visitors — but volume
+                alone does not tell the full story. The map below shows how unevenly tourism
+                activity is spread across Malaysia's 16 states and territories.
+            </p>
+
+            <div class="chart-full" id="chart3"></div>
+
+            <div class="chart-full" id="chart5"></div>
+            <div class="chart-full" id="chart4"></div>
+        </div>
+    </div>
+
+
+    <!-- ══════════════════════════════════════
+         ACT 3 — WHAT KIND OF TOURISM
+    ══════════════════════════════════════ -->
+    <div class="section">
+        <div class="departure-strip">
+            <span class="ds-plane">✈</span>
+            <span class="ds-gate">GATE 03</span>
+            <span class="ds-sep">|</span>
+            <span class="ds-title">WHAT KIND OF TOURISM?</span>
+            <span class="ds-sep">|</span>
+            <span class="ds-meta">FOCUS: SOURCE MARKETS</span>
+            <span class="ds-sep">|</span>
+            <span class="ds-status">STATUS: CONCENTRATED ⚠</span>
+        </div>
+
+        <div class="section-body">
+            <p class="section-intro">
+                Volume is only half the story. The character of tourism — where it comes from
+                and how concentrated it is — determines how resilient each state really is.
+                A state that receives millions of visitors from a single source country
+                is far more exposed to external shocks than one with a diverse visitor mix.
+            </p>
+
+            <div class="chart-full" id="chart6"></div>
+            <div class="chart-full" id="chart7"></div>
+
+            <!-- Passport Key Insight -->
+            <details class="pcallout">
+                <summary>
+                    <div class="pcover">
+                        <div class="pcover-plane">✈</div>
+                        <p class="pcover-country">Malaysia</p>
+                        <p class="pcover-sub">Ministry of Tourism · Data Report 2024</p>
+                        <p class="pcover-cta">KEY INSIGHT &nbsp;·&nbsp; Click to open ▾</p>
+                    </div>
+                </summary>
+
+                <div class="popening">
+                    <div class="pspine"></div>
+
+                    <div class="pleft">
+                        <div class="pleft-emblem">✈</div>
+                        <p class="pleft-country">Malaysia</p>
+                        <p class="pleft-ministry">KEMENTERIAN<br>PELANCONGAN<br>& KEBUDAYAAN</p>
+                        <div class="pwaves">
+                            <svg viewBox="0 0 180 110" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 10 Q45 0 90 10 Q135 20 180 10" stroke="#01579B" fill="none"
+                                    stroke-width="1.2" />
+                                <path d="M0 22 Q45 12 90 22 Q135 32 180 22" stroke="#01579B" fill="none"
+                                    stroke-width="1.2" />
+                                <path d="M0 34 Q45 24 90 34 Q135 44 180 34" stroke="#01579B" fill="none"
+                                    stroke-width="1.2" />
+                                <path d="M0 46 Q45 36 90 46 Q135 56 180 46" stroke="#01579B" fill="none"
+                                    stroke-width="1.2" />
+                                <path d="M0 58 Q45 48 90 58 Q135 68 180 58" stroke="#01579B" fill="none"
+                                    stroke-width="1.2" />
+                                <path d="M0 70 Q45 60 90 70 Q135 80 180 70" stroke="#01579B" fill="none"
+                                    stroke-width="1.2" />
+                                <path d="M0 82 Q45 72 90 82 Q135 92 180 82" stroke="#01579B" fill="none"
+                                    stroke-width="1.2" />
+                                <path d="M0 94 Q45 84 90 94 Q135 104 180 94" stroke="#01579B" fill="none"
+                                    stroke-width="1.2" />
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="pright">
+                        <p class="pr-label">Insight Classification</p>
+                        <h3 class="pr-title">Tourism Concentration<br>Risk Assessment</h3>
+                        <p class="pr-text">
+                            <strong>Singapore alone accounts for</strong><br>
+                            nearly <a href="#chart6" class="pr-link-inline">50%</a> of all international<br>
+                            arrivals into Malaysia.
+                        </p>
+                        <p class="pr-text">
+                            This makes inbound tourism<br>
+                            highly sensitive to a single<br>
+                            neighbour's economic policies.
+                        </p>
+                        <p class="pr-text">
+                            In 2021, Singapore arrivals<br>
+                            collapsed by <span class="pr-hl">99.4%</span> — from<br>
+                            2.7 million to just 17,692.<br>
+                            One policy nearly wiped out<br>
+                            Malaysia's entire inbound sector.
+                        </p>
+                        <a href="#chart6" class="pr-link">↑ Explore source markets chart</a>
+                        <div class="ppagenum">BON VOYAGE</div>
+                    </div>
+                </div>
+            </details>
+
+
+            <div class="chart-full" id="chart8"></div>
+            <div class="chart-full" id="chart9"></div>
+
+            <div class="chart-full" id="chart10"></div>
+            <div class="chart-full" id="chart11"></div>
+        </div>
+    </div>
+
+
+    <!-- ══════════════════════════════════════
+         ACT 4 — THE FULL PICTURE
+    ══════════════════════════════════════ -->
+    <div class="section">
+        <div class="departure-strip">
+            <span class="ds-plane">✈</span>
+            <span class="ds-gate">GATE 04</span>
+            <span class="ds-sep">|</span>
+            <span class="ds-title">THE FULL PICTURE</span>
+            <span class="ds-sep">|</span>
+            <span class="ds-meta">SCOPE: ALL ARCHETYPES</span>
+            <span class="ds-sep">|</span>
+            <span class="ds-status">STATUS: RISK EXPOSED ⚠</span>
+        </div>
+
+        <div class="section-body">
+            <p class="section-intro">
+                Combining magnitude (how much tourism a state has) and character (how diverse
+                its visitors are) reveals four distinct archetypes across Malaysia — each with
+                a different risk profile and a different tourism future.
+            </p>
+
+            <div class="chart-full" id="chart12"></div>
+        </div>
+    </div>
+
+
+    <!-- FOOTER -->
+    <div class="footer">
+        <p>
+            <strong>Data sources:</strong>
+            DOSM Tourism Satellite Account 2024, September 2025 (dosm.gov.my) &nbsp;·&nbsp;
+            Immigration Department Malaysia — Monthly arrivals by state of entry and nationality,
+            via data.gov.my (CC BY 4.0) &nbsp;·&nbsp;
+            Tourism Malaysia KPI Annual Reports 2019, 2022, 2023 (tourism.gov.my) &nbsp;·&nbsp;
+            DOSM Population by State via data.gov.my (CC BY 4.0)
+        </p>
+        <p>
+            Visualisation created with Vega-Lite v5 and Pure.css. &nbsp;·&nbsp;
+            Use of AI tools (Claude by Anthropic) acknowledged for data structuring,
+            code assistance, and grammar checking. &nbsp;·&nbsp;
+            <br> &copy; Soo Jun Hui 35733012 2026
+        </p>
+    </div>
+
+
+    <!-- CHART LOADERS -->
+    <script>
+        vegaEmbed('#chart1', 'vega-lite/chart1_gvati.json').catch(console.error);
+        vegaEmbed('#chart2', 'vega-lite/chart2_expenditure.json').catch(console.error);
+        vegaEmbed('#chart3', 'vega-lite/chart3_map_magnitude.json').catch(console.error);
+        vegaEmbed('#chart4', 'vega-lite/chart4_lollipop.json').catch(console.error);
+        vegaEmbed('#chart5', 'vega-lite/chart5_state_bar.json').catch(console.error);
+        vegaEmbed('#chart6', 'vega-lite/chart6_source_markets.json').catch(console.error);
+        vegaEmbed('#chart7', 'vega-lite/chart7_trend_lines.json', { renderer: 'svg' }).catch(console.error);
+        vegaEmbed('#chart8', 'vega-lite/chart8_slope.json').catch(console.error);
+        vegaEmbed('#chart9', 'vega-lite/chart9_diverging_bar.json').catch(console.error);
+        vegaEmbed('#chart10', 'vega-lite/chart10_quadrant.json').catch(console.error);
+        vegaEmbed('#chart11', 'vega-lite/chart11_heatmap.json').catch(console.error);
+        vegaEmbed('#chart12', 'vega-lite/chart12_archetype_map.json').catch(console.error);
+    </script>
+
+</body>
+
+</html>

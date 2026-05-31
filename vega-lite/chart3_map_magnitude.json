@@ -1,0 +1,193 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Domestic Tourism Intensity by State, 2024",
+    "subtitle": "Domestic visitor arrivals per capita. Darker blue = higher tourism intensity relative to population.",
+    "fontSize": 25,
+    "subtitleFontSize": 18,
+    "subtitleColor": "#666",
+    "anchor": "start",
+    "offset": 10,
+    "font": "Arial",
+    "subtitleFont": "Arial"
+  },
+  "width": "container",
+  "height": 460,
+  "params": [
+    {
+      "name": "zoom_level",
+      "value": 3000,
+      "bind": {
+        "input": "range",
+        "min": 1000,
+        "max": 8000,
+        "step": 100,
+        "name": "Zoom: "
+      }
+    },
+    {
+      "name": "center_to",
+      "value": [
+        109.5,
+        4.0
+      ],
+      "bind": {
+        "input": "select",
+        "options": [
+          [
+            109.5,
+            4.0
+          ],
+          [
+            101.7,
+            3.1
+          ],
+          [
+            110.3,
+            1.5
+          ],
+          [
+            103.8,
+            1.5
+          ],
+          [
+            100.3,
+            5.4
+          ],
+          [
+            117.0,
+            5.5
+          ]
+        ],
+        "labels": [
+          "All Malaysia",
+          "Kuala Lumpur",
+          "Sarawak",
+          "Johor Bahru",
+          "Penang",
+          "Sabah"
+        ],
+        "name": "Map Centre: "
+      }
+    }
+  ],
+  "projection": {
+    "type": "mercator",
+    "center": {
+      "expr": "center_to"
+    },
+    "scale": {
+      "expr": "zoom_level"
+    }
+  },
+  "layer": [
+    {
+      "data": {
+        "url": "data/malaysia_states.topojson",
+        "format": {
+          "type": "topojson",
+          "feature": "data"
+        }
+      },
+      "transform": [
+        {
+          "calculate": "'No data: ' + datum.properties.shapeName",
+          "as": "note"
+        }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "fill": "#ddd",
+        "stroke": "white",
+        "strokeWidth": 1
+      },
+      "encoding": {
+        "tooltip": {
+          "field": "note"
+        }
+      }
+    },
+    {
+      "data": {
+        "url": "data/malaysia_states.topojson",
+        "format": {
+          "type": "topojson",
+          "feature": "data"
+        }
+      },
+      "transform": [
+        {
+          "calculate": "datum.properties.shapeName == 'Malacca' ? 'Melaka' : datum.properties.shapeName == 'Penang' ? 'Pulau Pinang' : datum.properties.shapeName == 'Kuala Lumpur' ? 'W.P. Kuala Lumpur' : datum.properties.shapeName == 'Labuan' ? 'W.P. Labuan' : datum.properties.shapeName == 'Putrajaya' ? 'W.P. Putrajaya' : datum.properties.shapeName",
+          "as": "state_name"
+        },
+        {
+          "lookup": "state_name",
+          "from": {
+            "data": {
+              "url": "data/derived_metrics.csv"
+            },
+            "key": "state",
+            "fields": [
+              "dom_visitors_per_capita",
+              "dom_visitors_2024_000"
+            ]
+          }
+        }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "stroke": "white",
+        "strokeWidth": 1
+      },
+      "encoding": {
+        "color": {
+          "field": "dom_visitors_per_capita",
+          "type": "quantitative",
+          "title": "Visitors per Capita",
+          "scale": {
+            "domain": [
+              0,
+              25
+            ],
+            "range": [
+              "#B3E5FC",
+              "#0288D1",
+              "#01579B"
+            ]
+          },
+          "legend": {
+            "titleFontSize": 13,
+            "titleFont": "Arial",
+            "labelFontSize": 13,
+            "labelFont": "Arial",
+            "orient": "bottom-right",
+            "format": ".1f",
+            "gradientLength": 120
+          }
+        },
+        "tooltip": [
+          {
+            "field": "state_name",
+            "title": "State"
+          },
+          {
+            "field": "dom_visitors_per_capita",
+            "title": "Visitors per Capita",
+            "format": ".1f"
+          },
+          {
+            "field": "dom_visitors_2024_000",
+            "title": "Total Visitors ('000)",
+            "format": ",.0f"
+          }
+        ]
+      }
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "background": "white"
+  }
+}

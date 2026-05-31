@@ -1,0 +1,493 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Source Market Concentration Over Time by State, 2022\u20132024",
+    "subtitle": [
+      "Top-3 country share of international arrivals (%).",
+      "Darker = more concentrated. Use dropdown to highlight a year."
+    ],
+    "fontSize": 25,
+    "subtitleFontSize": 18,
+    "subtitleColor": "#666",
+    "anchor": "start",
+    "offset": 10,
+    "font": "Arial",
+    "subtitleFont": "Arial"
+  },
+  "width": "container",
+  "height": 420,
+  "data": {
+    "values": [
+      {
+        "year": 2022,
+        "state": "Johor",
+        "top3_share_pct": 92.3,
+        "top1_country": "Singapore",
+        "top2_country": "Indonesia"
+      },
+      {
+        "year": 2022,
+        "state": "Kedah",
+        "top3_share_pct": 90.8,
+        "top1_country": "Thailand",
+        "top2_country": "Singapore"
+      },
+      {
+        "year": 2022,
+        "state": "Kelantan",
+        "top3_share_pct": 98.9,
+        "top1_country": "Thailand",
+        "top2_country": "KHM"
+      },
+      {
+        "year": 2022,
+        "state": "Melaka",
+        "top3_share_pct": 99.5,
+        "top1_country": "Indonesia",
+        "top2_country": "Singapore"
+      },
+      {
+        "year": 2022,
+        "state": "Negeri Sembilan",
+        "top3_share_pct": 99.9,
+        "top1_country": "Indonesia",
+        "top2_country": "Singapore"
+      },
+      {
+        "year": 2022,
+        "state": "Pahang",
+        "top3_share_pct": 72.4,
+        "top1_country": "Singapore",
+        "top2_country": "Thailand"
+      },
+      {
+        "year": 2022,
+        "state": "Perak",
+        "top3_share_pct": 91.2,
+        "top1_country": "Thailand",
+        "top2_country": "Singapore"
+      },
+      {
+        "year": 2022,
+        "state": "Perlis",
+        "top3_share_pct": 97.1,
+        "top1_country": "Thailand",
+        "top2_country": "KHM"
+      },
+      {
+        "year": 2022,
+        "state": "Pulau Pinang",
+        "top3_share_pct": 75.3,
+        "top1_country": "Indonesia",
+        "top2_country": "Singapore"
+      },
+      {
+        "year": 2022,
+        "state": "Sabah",
+        "top3_share_pct": 74.9,
+        "top1_country": "South Korea",
+        "top2_country": "Indonesia"
+      },
+      {
+        "year": 2022,
+        "state": "Sarawak",
+        "top3_share_pct": 93.6,
+        "top1_country": "Brunei",
+        "top2_country": "Indonesia"
+      },
+      {
+        "year": 2022,
+        "state": "Selangor",
+        "top3_share_pct": 37.5,
+        "top1_country": "Indonesia",
+        "top2_country": "India"
+      },
+      {
+        "year": 2022,
+        "state": "Terengganu",
+        "top3_share_pct": 51.5,
+        "top1_country": "United Kingdom",
+        "top2_country": "FRA"
+      },
+      {
+        "year": 2022,
+        "state": "W.P. Labuan",
+        "top3_share_pct": 82.3,
+        "top1_country": "Brunei",
+        "top2_country": "Philippines"
+      },
+      {
+        "year": 2023,
+        "state": "Johor",
+        "top3_share_pct": 90.4,
+        "top1_country": "Singapore",
+        "top2_country": "Indonesia"
+      },
+      {
+        "year": 2023,
+        "state": "Kedah",
+        "top3_share_pct": 85.8,
+        "top1_country": "Thailand",
+        "top2_country": "Singapore"
+      },
+      {
+        "year": 2023,
+        "state": "Kelantan",
+        "top3_share_pct": 98.8,
+        "top1_country": "Thailand",
+        "top2_country": "KHM"
+      },
+      {
+        "year": 2023,
+        "state": "Melaka",
+        "top3_share_pct": 99.0,
+        "top1_country": "Indonesia",
+        "top2_country": "Singapore"
+      },
+      {
+        "year": 2023,
+        "state": "Negeri Sembilan",
+        "top3_share_pct": 99.9,
+        "top1_country": "Indonesia",
+        "top2_country": "FRA"
+      },
+      {
+        "year": 2023,
+        "state": "Pahang",
+        "top3_share_pct": 76.3,
+        "top1_country": "Singapore",
+        "top2_country": "China"
+      },
+      {
+        "year": 2023,
+        "state": "Perak",
+        "top3_share_pct": 91.1,
+        "top1_country": "Thailand",
+        "top2_country": "Singapore"
+      },
+      {
+        "year": 2023,
+        "state": "Perlis",
+        "top3_share_pct": 95.1,
+        "top1_country": "Thailand",
+        "top2_country": "KHM"
+      },
+      {
+        "year": 2023,
+        "state": "Pulau Pinang",
+        "top3_share_pct": 74.6,
+        "top1_country": "Indonesia",
+        "top2_country": "Singapore"
+      },
+      {
+        "year": 2023,
+        "state": "Sabah",
+        "top3_share_pct": 71.3,
+        "top1_country": "South Korea",
+        "top2_country": "China"
+      },
+      {
+        "year": 2023,
+        "state": "Sarawak",
+        "top3_share_pct": 92.4,
+        "top1_country": "Brunei",
+        "top2_country": "Indonesia"
+      },
+      {
+        "year": 2023,
+        "state": "Selangor",
+        "top3_share_pct": 38.8,
+        "top1_country": "Indonesia",
+        "top2_country": "China"
+      },
+      {
+        "year": 2023,
+        "state": "Terengganu",
+        "top3_share_pct": 34.6,
+        "top1_country": "Indonesia",
+        "top2_country": "CAN"
+      },
+      {
+        "year": 2023,
+        "state": "W.P. Labuan",
+        "top3_share_pct": 81.2,
+        "top1_country": "Brunei",
+        "top2_country": "Philippines"
+      },
+      {
+        "year": 2024,
+        "state": "Johor",
+        "top3_share_pct": 90.5,
+        "top1_country": "Singapore",
+        "top2_country": "Indonesia"
+      },
+      {
+        "year": 2024,
+        "state": "Kedah",
+        "top3_share_pct": 79.7,
+        "top1_country": "Thailand",
+        "top2_country": "Indonesia"
+      },
+      {
+        "year": 2024,
+        "state": "Kelantan",
+        "top3_share_pct": 98.7,
+        "top1_country": "Thailand",
+        "top2_country": "KHM"
+      },
+      {
+        "year": 2024,
+        "state": "Melaka",
+        "top3_share_pct": 98.5,
+        "top1_country": "Indonesia",
+        "top2_country": "Singapore"
+      },
+      {
+        "year": 2024,
+        "state": "Negeri Sembilan",
+        "top3_share_pct": 99.6,
+        "top1_country": "Indonesia",
+        "top2_country": "Thailand"
+      },
+      {
+        "year": 2024,
+        "state": "Pahang",
+        "top3_share_pct": 74.3,
+        "top1_country": "Singapore",
+        "top2_country": "China"
+      },
+      {
+        "year": 2024,
+        "state": "Perak",
+        "top3_share_pct": 90.4,
+        "top1_country": "Thailand",
+        "top2_country": "Singapore"
+      },
+      {
+        "year": 2024,
+        "state": "Perlis",
+        "top3_share_pct": 94.2,
+        "top1_country": "Thailand",
+        "top2_country": "KHM"
+      },
+      {
+        "year": 2024,
+        "state": "Pulau Pinang",
+        "top3_share_pct": 73.7,
+        "top1_country": "Indonesia",
+        "top2_country": "Singapore"
+      },
+      {
+        "year": 2024,
+        "state": "Sabah",
+        "top3_share_pct": 78.7,
+        "top1_country": "China",
+        "top2_country": "South Korea"
+      },
+      {
+        "year": 2024,
+        "state": "Sarawak",
+        "top3_share_pct": 92.9,
+        "top1_country": "Brunei",
+        "top2_country": "Indonesia"
+      },
+      {
+        "year": 2024,
+        "state": "Selangor",
+        "top3_share_pct": 50.0,
+        "top1_country": "China",
+        "top2_country": "Indonesia"
+      },
+      {
+        "year": 2024,
+        "state": "Terengganu",
+        "top3_share_pct": 50.5,
+        "top1_country": "DNK",
+        "top2_country": "Vietnam"
+      },
+      {
+        "year": 2024,
+        "state": "W.P. Labuan",
+        "top3_share_pct": 78.6,
+        "top1_country": "Brunei",
+        "top2_country": "Philippines"
+      }
+    ]
+  },
+  "params": [
+    {
+      "name": "year_select",
+      "value": null,
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+          2022,
+          2023,
+          2024
+        ],
+        "labels": [
+          "All Years",
+          "2022",
+          "2023",
+          "2024"
+        ],
+        "name": "Highlight Year: "
+      }
+    }
+  ],
+  "transform": [
+    {
+      "calculate": "year_select == null || datum.year == year_select ? 1 : 0",
+      "as": "is_selected"
+    }
+  ],
+  "layer": [
+    {
+      "mark": {
+        "type": "rect",
+        "stroke": "white",
+        "strokeWidth": 1.5
+      },
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "ordinal",
+          "title": "Year",
+          "axis": {
+            "labelFontSize": 13,
+            "labelFont": "Arial",
+            "labelAngle": 0,
+            "titleFontSize": 13,
+            "titleFont": "Arial"
+          }
+        },
+        "y": {
+          "field": "state",
+          "type": "nominal",
+          "title": null,
+          "sort": {
+            "field": "top3_share_pct",
+            "op": "max",
+            "order": "descending"
+          },
+          "axis": {
+            "labelFontSize": 13,
+            "labelFont": "Arial",
+            "labelLimit": 180
+          }
+        },
+        "color": {
+          "field": "top3_share_pct",
+          "type": "quantitative",
+          "title": "Top-3 Share (%)",
+          "scale": {
+            "domain": [
+              30,
+              100
+            ],
+            "range": [
+              "#B3E5FC",
+              "#01579B"
+            ]
+          },
+          "legend": {
+            "titleFontSize": 13,
+            "titleFont": "Arial",
+            "labelFontSize": 13,
+            "labelFont": "Arial",
+            "orient": "right"
+          }
+        },
+        "opacity": {
+          "field": "is_selected",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              1
+            ],
+            "range": [
+              0.15,
+              1
+            ]
+          },
+          "legend": null
+        },
+        "tooltip": [
+          {
+            "field": "state",
+            "title": "State of Entry"
+          },
+          {
+            "field": "year",
+            "title": "Year"
+          },
+          {
+            "field": "top3_share_pct",
+            "title": "Top-3 Share (%)",
+            "format": ".1f"
+          },
+          {
+            "field": "top1_country",
+            "title": "Top Source Market"
+          },
+          {
+            "field": "top2_country",
+            "title": "2nd Source Market"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "fontSize": 13,
+        "font": "Arial",
+        "fontWeight": "bold",
+        "color": "white"
+      },
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "ordinal"
+        },
+        "y": {
+          "field": "state",
+          "type": "nominal",
+          "sort": {
+            "field": "top3_share_pct",
+            "op": "max",
+            "order": "descending"
+          }
+        },
+        "text": {
+          "field": "top3_share_pct",
+          "type": "quantitative",
+          "format": ".0f"
+        },
+        "opacity": {
+          "field": "is_selected",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              1
+            ],
+            "range": [
+              0.15,
+              1
+            ]
+          },
+          "legend": null
+        }
+      }
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "background": "white"
+  }
+}

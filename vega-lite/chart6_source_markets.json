@@ -1,0 +1,722 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Malaysia's Top 10 Source Markets",
+    "subtitle": "Percentage share of top 10 arrivals by country of origin. Use the dropdown to explore different years.",
+    "fontSize": 25,
+    "subtitleFontSize": 18,
+    "subtitleColor": "#666",
+    "anchor": "start",
+    "offset": 15,
+    "font": "Arial",
+    "subtitleFont": "Arial"
+  },
+  "width": "container",
+  "height": 360,
+  "padding": {
+    "left": 25,
+    "right": 40,
+    "top": 5,
+    "bottom": 5
+  },
+  "data": {
+    "values": [
+      {
+        "year": 2019,
+        "country": "AUS",
+        "country_name": "Australia",
+        "arrivals": 368271
+      },
+      {
+        "year": 2020,
+        "country": "AUS",
+        "country_name": "Australia",
+        "arrivals": 85148
+      },
+      {
+        "year": 2021,
+        "country": "AUS",
+        "country_name": "Australia",
+        "arrivals": 1900
+      },
+      {
+        "year": 2022,
+        "country": "AUS",
+        "country_name": "Australia",
+        "arrivals": 179375
+      },
+      {
+        "year": 2023,
+        "country": "AUS",
+        "country_name": "Australia",
+        "arrivals": 409096
+      },
+      {
+        "year": 2024,
+        "country": "AUS",
+        "country_name": "Australia",
+        "arrivals": 357525
+      },
+      {
+        "year": 2019,
+        "country": "BGD",
+        "country_name": "Bangladesh",
+        "arrivals": 179000
+      },
+      {
+        "year": 2020,
+        "country": "BGD",
+        "country_name": "Bangladesh",
+        "arrivals": 57670
+      },
+      {
+        "year": 2021,
+        "country": "BGD",
+        "country_name": "Bangladesh",
+        "arrivals": 8061
+      },
+      {
+        "year": 2022,
+        "country": "BGD",
+        "country_name": "Bangladesh",
+        "arrivals": 239144
+      },
+      {
+        "year": 2023,
+        "country": "BGD",
+        "country_name": "Bangladesh",
+        "arrivals": 635545
+      },
+      {
+        "year": 2024,
+        "country": "BGD",
+        "country_name": "Bangladesh",
+        "arrivals": 334011
+      },
+      {
+        "year": 2019,
+        "country": "BRN",
+        "country_name": "Brunei",
+        "arrivals": 1216123
+      },
+      {
+        "year": 2020,
+        "country": "BRN",
+        "country_name": "Brunei",
+        "arrivals": 187788
+      },
+      {
+        "year": 2021,
+        "country": "BRN",
+        "country_name": "Brunei",
+        "arrivals": 4162
+      },
+      {
+        "year": 2022,
+        "country": "BRN",
+        "country_name": "Brunei",
+        "arrivals": 398291
+      },
+      {
+        "year": 2023,
+        "country": "BRN",
+        "country_name": "Brunei",
+        "arrivals": 1113225
+      },
+      {
+        "year": 2024,
+        "country": "BRN",
+        "country_name": "Brunei",
+        "arrivals": 1435830
+      },
+      {
+        "year": 2019,
+        "country": "CHN",
+        "country_name": "China",
+        "arrivals": 3114257
+      },
+      {
+        "year": 2020,
+        "country": "CHN",
+        "country_name": "China",
+        "arrivals": 394813
+      },
+      {
+        "year": 2021,
+        "country": "CHN",
+        "country_name": "China",
+        "arrivals": 15555
+      },
+      {
+        "year": 2022,
+        "country": "CHN",
+        "country_name": "China",
+        "arrivals": 294311
+      },
+      {
+        "year": 2023,
+        "country": "CHN",
+        "country_name": "China",
+        "arrivals": 1661719
+      },
+      {
+        "year": 2024,
+        "country": "CHN",
+        "country_name": "China",
+        "arrivals": 3211029
+      },
+      {
+        "year": 2019,
+        "country": "GBR",
+        "country_name": "United Kingdom",
+        "arrivals": 346485
+      },
+      {
+        "year": 2020,
+        "country": "GBR",
+        "country_name": "United Kingdom",
+        "arrivals": 75176
+      },
+      {
+        "year": 2021,
+        "country": "GBR",
+        "country_name": "United Kingdom",
+        "arrivals": 5007
+      },
+      {
+        "year": 2022,
+        "country": "GBR",
+        "country_name": "United Kingdom",
+        "arrivals": 163998
+      },
+      {
+        "year": 2023,
+        "country": "GBR",
+        "country_name": "United Kingdom",
+        "arrivals": 325653
+      },
+      {
+        "year": 2024,
+        "country": "GBR",
+        "country_name": "United Kingdom",
+        "arrivals": 345519
+      },
+      {
+        "year": 2019,
+        "country": "IDN",
+        "country_name": "Indonesia",
+        "arrivals": 3623277
+      },
+      {
+        "year": 2020,
+        "country": "IDN",
+        "country_name": "Indonesia",
+        "arrivals": 792231
+      },
+      {
+        "year": 2021,
+        "country": "IDN",
+        "country_name": "Indonesia",
+        "arrivals": 20048
+      },
+      {
+        "year": 2022,
+        "country": "IDN",
+        "country_name": "Indonesia",
+        "arrivals": 1742038
+      },
+      {
+        "year": 2023,
+        "country": "IDN",
+        "country_name": "Indonesia",
+        "arrivals": 3734821
+      },
+      {
+        "year": 2024,
+        "country": "IDN",
+        "country_name": "Indonesia",
+        "arrivals": 3596939
+      },
+      {
+        "year": 2019,
+        "country": "IND",
+        "country_name": "India",
+        "arrivals": 735309
+      },
+      {
+        "year": 2020,
+        "country": "IND",
+        "country_name": "India",
+        "arrivals": 201631
+      },
+      {
+        "year": 2021,
+        "country": "IND",
+        "country_name": "India",
+        "arrivals": 14485
+      },
+      {
+        "year": 2022,
+        "country": "IND",
+        "country_name": "India",
+        "arrivals": 472326
+      },
+      {
+        "year": 2023,
+        "country": "IND",
+        "country_name": "India",
+        "arrivals": 930548
+      },
+      {
+        "year": 2024,
+        "country": "IND",
+        "country_name": "India",
+        "arrivals": 1214148
+      },
+      {
+        "year": 2019,
+        "country": "JPN",
+        "country_name": "Japan",
+        "arrivals": 424694
+      },
+      {
+        "year": 2020,
+        "country": "JPN",
+        "country_name": "Japan",
+        "arrivals": 98775
+      },
+      {
+        "year": 2021,
+        "country": "JPN",
+        "country_name": "Japan",
+        "arrivals": 6817
+      },
+      {
+        "year": 2022,
+        "country": "JPN",
+        "country_name": "Japan",
+        "arrivals": 127017
+      },
+      {
+        "year": 2023,
+        "country": "JPN",
+        "country_name": "Japan",
+        "arrivals": 324050
+      },
+      {
+        "year": 2024,
+        "country": "JPN",
+        "country_name": "Japan",
+        "arrivals": 343665
+      },
+      {
+        "year": 2019,
+        "country": "KOR",
+        "country_name": "South Korea",
+        "arrivals": 673065
+      },
+      {
+        "year": 2020,
+        "country": "KOR",
+        "country_name": "South Korea",
+        "arrivals": 140362
+      },
+      {
+        "year": 2021,
+        "country": "KOR",
+        "country_name": "South Korea",
+        "arrivals": 5348
+      },
+      {
+        "year": 2022,
+        "country": "KOR",
+        "country_name": "South Korea",
+        "arrivals": 187941
+      },
+      {
+        "year": 2023,
+        "country": "KOR",
+        "country_name": "South Korea",
+        "arrivals": 444660
+      },
+      {
+        "year": 2024,
+        "country": "KOR",
+        "country_name": "South Korea",
+        "arrivals": 477791
+      },
+      {
+        "year": 2019,
+        "country": "PHL",
+        "country_name": "Philippines",
+        "arrivals": 421908
+      },
+      {
+        "year": 2020,
+        "country": "PHL",
+        "country_name": "Philippines",
+        "arrivals": 97011
+      },
+      {
+        "year": 2021,
+        "country": "PHL",
+        "country_name": "Philippines",
+        "arrivals": 7840
+      },
+      {
+        "year": 2022,
+        "country": "PHL",
+        "country_name": "Philippines",
+        "arrivals": 234363
+      },
+      {
+        "year": 2023,
+        "country": "PHL",
+        "country_name": "Philippines",
+        "arrivals": 510580
+      },
+      {
+        "year": 2024,
+        "country": "PHL",
+        "country_name": "Philippines",
+        "arrivals": 506081
+      },
+      {
+        "year": 2019,
+        "country": "SGP",
+        "country_name": "Singapore",
+        "arrivals": 10163882
+      },
+      {
+        "year": 2020,
+        "country": "SGP",
+        "country_name": "Singapore",
+        "arrivals": 2777821
+      },
+      {
+        "year": 2021,
+        "country": "SGP",
+        "country_name": "Singapore",
+        "arrivals": 17692
+      },
+      {
+        "year": 2022,
+        "country": "SGP",
+        "country_name": "Singapore",
+        "arrivals": 8389031
+      },
+      {
+        "year": 2023,
+        "country": "SGP",
+        "country_name": "Singapore",
+        "arrivals": 14885712
+      },
+      {
+        "year": 2024,
+        "country": "SGP",
+        "country_name": "Singapore",
+        "arrivals": 15049829
+      },
+      {
+        "year": 2019,
+        "country": "THA",
+        "country_name": "Thailand",
+        "arrivals": 1884306
+      },
+      {
+        "year": 2020,
+        "country": "THA",
+        "country_name": "Thailand",
+        "arrivals": 537336
+      },
+      {
+        "year": 2021,
+        "country": "THA",
+        "country_name": "Thailand",
+        "arrivals": 319365
+      },
+      {
+        "year": 2022,
+        "country": "THA",
+        "country_name": "Thailand",
+        "arrivals": 1213634
+      },
+      {
+        "year": 2023,
+        "country": "THA",
+        "country_name": "Thailand",
+        "arrivals": 2362222
+      },
+      {
+        "year": 2024,
+        "country": "THA",
+        "country_name": "Thailand",
+        "arrivals": 1962819
+      },
+      {
+        "year": 2019,
+        "country": "TWN",
+        "country_name": "Chinese Taipei",
+        "arrivals": 382916
+      },
+      {
+        "year": 2020,
+        "country": "TWN",
+        "country_name": "Chinese Taipei",
+        "arrivals": 66860
+      },
+      {
+        "year": 2021,
+        "country": "TWN",
+        "country_name": "Chinese Taipei",
+        "arrivals": 1161
+      },
+      {
+        "year": 2022,
+        "country": "TWN",
+        "country_name": "Chinese Taipei",
+        "arrivals": 58917
+      },
+      {
+        "year": 2023,
+        "country": "TWN",
+        "country_name": "Chinese Taipei",
+        "arrivals": 314100
+      },
+      {
+        "year": 2024,
+        "country": "TWN",
+        "country_name": "Chinese Taipei",
+        "arrivals": 369188
+      },
+      {
+        "year": 2019,
+        "country": "USA",
+        "country_name": "United States",
+        "arrivals": 269928
+      },
+      {
+        "year": 2020,
+        "country": "USA",
+        "country_name": "United States",
+        "arrivals": 54456
+      },
+      {
+        "year": 2021,
+        "country": "USA",
+        "country_name": "United States",
+        "arrivals": 3265
+      },
+      {
+        "year": 2022,
+        "country": "USA",
+        "country_name": "United States",
+        "arrivals": 126536
+      },
+      {
+        "year": 2023,
+        "country": "USA",
+        "country_name": "United States",
+        "arrivals": 267340
+      },
+      {
+        "year": 2024,
+        "country": "USA",
+        "country_name": "United States",
+        "arrivals": 256745
+      },
+      {
+        "year": 2019,
+        "country": "VNM",
+        "country_name": "Vietnam",
+        "arrivals": 400346
+      },
+      {
+        "year": 2020,
+        "country": "VNM",
+        "country_name": "Vietnam",
+        "arrivals": 72079
+      },
+      {
+        "year": 2021,
+        "country": "VNM",
+        "country_name": "Vietnam",
+        "arrivals": 1305
+      },
+      {
+        "year": 2022,
+        "country": "VNM",
+        "country_name": "Vietnam",
+        "arrivals": 200122
+      },
+      {
+        "year": 2023,
+        "country": "VNM",
+        "country_name": "Vietnam",
+        "arrivals": 402145
+      },
+      {
+        "year": 2024,
+        "country": "VNM",
+        "country_name": "Vietnam",
+        "arrivals": 343800
+      }
+    ]
+  },
+  "params": [
+    {
+      "name": "year_select",
+      "value": 2024,
+      "bind": {
+        "input": "select",
+        "options": [
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024
+        ],
+        "name": "Select Year: "
+      }
+    }
+  ],
+  "transform": [
+    {
+      "filter": "datum.year == year_select"
+    },
+    {
+      "window": [
+        {
+          "op": "rank",
+          "as": "rank"
+        }
+      ],
+      "sort": [
+        {
+          "field": "arrivals",
+          "order": "descending"
+        }
+      ]
+    },
+    {
+      "filter": "datum.rank <= 10"
+    },
+    {
+      "joinaggregate": [
+        {
+          "op": "sum",
+          "field": "arrivals",
+          "as": "total_arrivals"
+        }
+      ]
+    },
+    {
+      "calculate": "datum.arrivals / datum.total_arrivals * 100",
+      "as": "share_pct"
+    },
+    {
+      "calculate": "datum.country_name === 'Singapore' ? '#FFD600' : '#0288D1'",
+      "as": "bar_color"
+    }
+  ],
+  "layer": [
+    {
+      "mark": {
+        "type": "bar",
+        "cornerRadiusEnd": 4
+      },
+      "encoding": {
+        "y": {
+          "field": "country_name",
+          "type": "nominal",
+          "sort": {
+            "field": "share_pct",
+            "order": "descending"
+          },
+          "title": null,
+          "axis": {
+            "labelFontSize": 13,
+            "labelFont": "Arial",
+            "labelLimit": 150
+          }
+        },
+        "x": {
+          "field": "share_pct",
+          "type": "quantitative",
+          "title": "Share of Top 10 Arrivals (%)",
+          "scale": {
+            "domain": [
+              0,
+              100
+            ]
+          },
+          "axis": {
+            "labelFontSize": 13,
+            "labelFont": "Arial",
+            "titleFontSize": 13,
+            "titleFont": "Arial",
+            "format": ".1f"
+          }
+        },
+        "color": {
+          "field": "bar_color",
+          "type": "nominal",
+          "scale": null,
+          "legend": null
+        },
+        "tooltip": [
+          {
+            "field": "country_name",
+            "title": "Country"
+          },
+          {
+            "field": "share_pct",
+            "title": "Share (%)",
+            "format": ".1f"
+          },
+          {
+            "field": "arrivals",
+            "title": "Raw Arrivals",
+            "format": ","
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 4,
+        "fontSize": 13,
+        "font": "Arial",
+        "color": "#333"
+      },
+      "encoding": {
+        "y": {
+          "field": "country_name",
+          "type": "nominal",
+          "sort": {
+            "field": "share_pct",
+            "order": "descending"
+          }
+        },
+        "x": {
+          "field": "share_pct",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "share_pct",
+          "type": "quantitative",
+          "format": ".1f"
+        }
+      }
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "background": "white"
+  }
+}

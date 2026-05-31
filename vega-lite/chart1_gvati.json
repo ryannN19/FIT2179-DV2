@@ -1,0 +1,300 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Malaysia Tourism Industry: Gross Value Added (GVATI), 2019\u20132024",
+    "subtitle": [
+      "RM Billion at current prices.",
+      "Use the slider to replay the recovery year by year."
+    ],
+    "fontSize": 25,
+    "subtitleFontSize": 18,
+    "subtitleColor": "#666",
+    "anchor": "start",
+    "offset": 10,
+    "font": "Arial",
+    "subtitleFont": "Arial"
+  },
+  "width": "container",
+  "height": 340,
+  "data": {
+    "values": [
+      {
+        "year": "2019",
+        "gvati_rm_bil": 240.0,
+        "gvati_pct_gdp": 15.9,
+        "year_int": 2019
+      },
+      {
+        "year": "2020",
+        "gvati_rm_bil": 200.3,
+        "gvati_pct_gdp": 14.1,
+        "year_int": 2020
+      },
+      {
+        "year": "2021",
+        "gvati_rm_bil": 198.5,
+        "gvati_pct_gdp": 12.8,
+        "year_int": 2021
+      },
+      {
+        "year": "2022",
+        "gvati_rm_bil": 245.2,
+        "gvati_pct_gdp": 13.7,
+        "year_int": 2022
+      },
+      {
+        "year": "2023",
+        "gvati_rm_bil": 271.9,
+        "gvati_pct_gdp": 14.9,
+        "year_int": 2023
+      },
+      {
+        "year": "2024",
+        "gvati_rm_bil": 291.9,
+        "gvati_pct_gdp": 15.1,
+        "year_int": 2024
+      }
+    ]
+  },
+  "transform": [
+    {
+      "calculate": "datum.gvati_pct_gdp + '%'",
+      "as": "pct_label"
+    },
+    {
+      "filter": "datum.year_int <= year_slider"
+    }
+  ],
+  "encoding": {
+    "x": {
+      "field": "year",
+      "type": "ordinal",
+      "axis": {
+        "labelFontSize": 13,
+        "labelFont": "Arial",
+        "labelAngle": 0,
+        "title": null,
+        "grid": false,
+        "orient": "bottom"
+      }
+    },
+    "y": {
+      "field": "gvati_rm_bil",
+      "type": "quantitative",
+      "title": "GVATI (RM Billion)",
+      "scale": {
+        "domain": [
+          0,
+          340
+        ]
+      },
+      "axis": {
+        "labelFontSize": 13,
+        "labelFont": "Arial",
+        "titleFontSize": 13,
+        "titleFont": "Arial",
+        "grid": true,
+        "gridColor": "#E3F6FC",
+        "tickCount": 6
+      }
+    }
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "rect",
+        "opacity": 0.07,
+        "color": "#E53935"
+      },
+      "encoding": {
+        "x": {
+          "datum": "2020"
+        },
+        "x2": {
+          "datum": "2021"
+        },
+        "y": {
+          "value": 0
+        },
+        "y2": {
+          "value": 340
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "area",
+        "line": {
+          "color": "#0277BD",
+          "strokeWidth": 2.5
+        },
+        "opacity": 0.2,
+        "color": "#4FC3F7"
+      }
+    },
+    {
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 70,
+        "color": "#0277BD"
+      },
+      "encoding": {
+        "tooltip": [
+          {
+            "field": "year",
+            "title": "Year"
+          },
+          {
+            "field": "gvati_rm_bil",
+            "title": "GVATI (RM Bil)",
+            "format": ".1f"
+          },
+          {
+            "field": "gvati_pct_gdp",
+            "title": "% of GDP",
+            "format": ".1f"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "dy": -13,
+        "fontSize": 15,
+        "font": "Arial",
+        "color": "#0277BD",
+        "fontWeight": "bold"
+      },
+      "encoding": {
+        "text": {
+          "field": "gvati_rm_bil",
+          "type": "quantitative",
+          "format": ".0f"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "dy": -26,
+        "fontSize": 11,
+        "font": "Arial",
+        "color": "#999"
+      },
+      "encoding": {
+        "text": {
+          "field": "pct_label",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "fontSize": 13,
+        "font": "Arial",
+        "color": "#E53935",
+        "dx": 90
+      },
+      "encoding": {
+        "x": {
+          "datum": "2020"
+        },
+        "y": {
+          "value": 15
+        },
+        "text": {
+          "value": "COVID-19"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "fontSize": 13,
+        "font": "Arial",
+        "color": "#E53935",
+        "dx": 90
+      },
+      "encoding": {
+        "x": {
+          "datum": "2020"
+        },
+        "y": {
+          "value": 30
+        },
+        "text": {
+          "value": "Impact"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "rule",
+        "color": "#0288D1",
+        "strokeDash": [
+          5,
+          4
+        ],
+        "strokeWidth": 1.5
+      },
+      "encoding": {
+        "x": {
+          "datum": "2022"
+        },
+        "y": {
+          "value": 0
+        },
+        "y2": {
+          "value": 340
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 5,
+        "fontSize": 13,
+        "font": "Arial",
+        "color": "#0288D1"
+      },
+      "encoding": {
+        "x": {
+          "datum": "2022"
+        },
+        "y": {
+          "value": 15
+        },
+        "text": {
+          "value": "Borders Reopen"
+        }
+      }
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "background": "white"
+  },
+  "params": [
+    {
+      "name": "year_slider",
+      "value": 2024,
+      "bind": {
+        "input": "range",
+        "min": 2019,
+        "max": 2024,
+        "step": 1,
+        "name": "Show up to year: "
+      }
+    }
+  ]
+}

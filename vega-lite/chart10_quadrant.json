@@ -246,7 +246,6 @@
         "fontSize": 12,
         "font": "Arial",
         "color": "#0277BD",
-        "fontWeight": "bold",
         "opacity": 0.5
       },
       "encoding": {
@@ -267,7 +266,6 @@
         "fontSize": 12,
         "font": "Arial",
         "color": "#FF7043",
-        "fontWeight": "bold",
         "opacity": 0.5
       },
       "encoding": {
@@ -288,7 +286,6 @@
         "fontSize": 12,
         "font": "Arial",
         "color": "#555",
-        "fontWeight": "normal",
         "opacity": 0.5
       },
       "encoding": {
@@ -309,7 +306,6 @@
         "fontSize": 12,
         "font": "Arial",
         "color": "#555",
-        "fontWeight": "normal",
         "opacity": 0.5
       },
       "encoding": {
